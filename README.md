@@ -19,16 +19,8 @@ Styling is done by using Styled Components.
 
 2.  **Open the directory in `vscode`**
 
-3.  **Run the following to install dependencies**
+3.  **Run `yarn` to install dependencies**
 
-```shell
- yarn
-```
+4.  **Run `yarn develop`**
 
-4.  **Run:**
-
-```shell
- yarn develop
-```
-
-This will start a develop instance of gatsby, which should be available on [http://localhost:8000](http://localhost:8000), gatsby will automatically reload when you update components
+    This will start a develop instance of gatsby, which should be available on [http://localhost:8000](http://localhost:8000), gatsby will automatically reload when you update components
