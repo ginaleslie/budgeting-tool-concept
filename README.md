@@ -5,7 +5,7 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby's hello-world starter
+  Budgeting Tool Concept
 </h1>
 
 This project is the final in our course. The brief requires us to build a financial management software where incomes and expenses can be tracked proactively.
@@ -19,8 +19,16 @@ Styling is done by using Styled Components.
 
 2.  **Open the directory in `vscode`**
 
-3.  **Run `yarn` to install dependencies**
+3.  **Run the following to install dependencies**
 
-4.  **Run `yarn develop`**
+```shell
+ yarn
+```
 
-    This will start a develop instance of gatsby, which should be available on [http://localhost:8000](http://localhost:8000), gatsby will automatically reload when you update components
+4.  **Run:**
+
+```shell
+ yarn develop
+```
+
+This will start a develop instance of gatsby, which should be available on [http://localhost:8000](http://localhost:8000), gatsby will automatically reload when you update components
