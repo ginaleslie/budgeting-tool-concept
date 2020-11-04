@@ -1,9 +1,5 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="30" />
-  </a>
-</p>
+
 <h1 align="center">
   Budgeting Tool Concept
 </h1>
@@ -13,7 +9,7 @@ Please note:
 This project uses AirBnB style guide, where trailing semi-colons are not needed. All React components should end in .js
 Styling is done by using Styled Components.
 
-## 🚀 Quick start
+## 🚀 Quick start on your local computer
 
 1.  **Clone the repository**
 
