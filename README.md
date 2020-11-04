@@ -5,9 +5,6 @@
 </h1>
 
 This project is the final in our course. The brief requires us to build a financial management software where incomes and expenses can be tracked proactively.
-Please note:
-This project uses AirBnB style guide, where trailing semi-colons are not needed. All React components should end in .js
-Styling is done by using Styled Components.
 
 ## 🚀 Quick start on your local computer
 
