@@ -1,68 +1,27 @@
-import React, { useEffect, useState, useContext } from 'react'
-import axios from 'axios'
+import React, { useEffect, useContext } from 'react'
+import GetDataFromApi from '../FetchData'
 import DataFromApiContext from '../../context/DataFromApi'
-import { useLocalStorage } from '../LocalStorage'
-
-const getDataFromApi = async setFetchedTransactions => {
-  try {
-    const response = await axios.get(
-      'https://indie-transaction-api.netlify.app//.netlify/functions/api/api/'
-    )
-
-    setFetchedTransactions(response.data.transactions)
-  } catch (err) {
-    console.error(err.message)
-  }
-}
+import LocalStorage from '../LocalStorage'
 
 const Data = () => {
+  // retrieving data from use context
   const { fetchedTransactions, setFetchedTransactions } = useContext(
     DataFromApiContext
   )
 
-  // useEffect(() => {
-  //   if (theme)
-  //   setTheme(fetchedTransactions)
-  // }, [fetchedTransactions, setTheme])
-
-  // console.log(storedTheme)
-  // const [stored, setStored] = useState([])
-  const storedstuff = JSON.parse(localStorage.getItem('quentinTarantino'))
-
+  // updating new transactions
   useEffect(() => {
-    if (storedstuff.length === 0) {
-      localStorage.setItem(
-        'quentinTarantino',
-        JSON.stringify(fetchedTransactions)
-      )
-    } else {
-      return console.log('hello')
-    }
-  }, [fetchedTransactions, setFetchedTransactions, storedstuff.length])
+    GetDataFromApi(setFetchedTransactions)
+  }, [setFetchedTransactions])
 
-  // const onRefresh = () => {
-  //   getDataFromApi(setFetchedTransactions)
-
-  //   if (data.length === 0) {
-  //     console.log('0')
-  //   } else {
-  //     console.log('hello')
-  //   }
-  // }
-
-  console.log(storedstuff.length)
-
-  // console.log(storedstuff)
   return (
     <div>
-      <button
-        onClick={() => getDataFromApi(setFetchedTransactions)}
-        type="button"
-      >
+      <button onClick={() => alert('clicked')} type="button">
         refresh
       </button>
-
-      <pre> {JSON.stringify(storedstuff, null, 2)} </pre>
+      <LocalStorage />
+      new
+      <pre> {JSON.stringify(fetchedTransactions, null, 2)} </pre>
     </div>
   )
 }

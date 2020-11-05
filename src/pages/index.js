@@ -3,7 +3,7 @@ import Data from '../components/Data'
 import DataFromApiContext from '../context/DataFromApi'
 
 export default function Home() {
-  const [fetchedTransactions, setFetchedTransactions] = useState({})
+  const [fetchedTransactions, setFetchedTransactions] = useState([])
 
   return (
     <DataFromApiContext.Provider

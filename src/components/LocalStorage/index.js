@@ -1,12 +1,31 @@
-import { useState } from 'react'
+import React, { useEffect, useContext } from 'react'
+import DataFromApiContext from '../../context/DataFromApi'
 
-export const useLocalStorage = (key, initialValue) => {
-  const [storedValue, setStoredValue] = useState(initialValue)
+const useLocalStorage = () => {
+  // use context hooks
+  const { fetchedTransactions, setFetchedTransactions } = useContext(
+    DataFromApiContext
+  )
+  // storedTransactions is equal to the name of the item in storage else it's an empty array
+  const storedTransactions = JSON.parse(localStorage.getItem('stored')) || []
 
-  const setValue = value => {
-    window.localStorage.setItem(key, JSON.stringify(value))
-    setStoredValue(value)
-  }
+  useEffect(() => {
+    // if storedTransactions is an empty array then the fetched data from the api is stored
+    if (storedTransactions.length === 0) {
+      localStorage.setItem('stored', JSON.stringify(fetchedTransactions))
+    } else {
+      return console.log('hello')
+    }
+  }, [fetchedTransactions, setFetchedTransactions, storedTransactions.length])
 
-  return [storedValue, setValue]
+  console.log(storedTransactions)
+
+  return (
+    <div>
+      stored
+      <pre> {JSON.stringify(storedTransactions, null, 2)} </pre>
+    </div>
+  )
 }
+
+export default useLocalStorage
