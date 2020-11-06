@@ -5,9 +5,12 @@ import LocalStorage from '../LocalStorage'
 
 const Data = () => {
   // retrieving data from use context
-  const { fetchedTransactions, setFetchedTransactions } = useContext(
-    DataFromApiContext
-  )
+  const {
+    fetchedTransactions,
+    setFetchedTransactions,
+    storage,
+    setStorage,
+  } = useContext(DataFromApiContext)
 
   // updating new transactions
   useEffect(() => {
@@ -20,6 +23,8 @@ const Data = () => {
         refresh
       </button>
       <LocalStorage />
+      {/* stored
+      <pre> {JSON.stringify(storage, null, 2)} </pre> */}
       new
       <pre> {JSON.stringify(fetchedTransactions, null, 2)} </pre>
     </div>
