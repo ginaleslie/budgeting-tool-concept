@@ -52,7 +52,31 @@ const LocalStorage = () => {
         fetch new data
       </button>
       items in store {transactions.length}
-      <pre>{JSON.stringify(transactions, null, 2)}</pre>
+      <pre>{JSON.stringify(transactions, null, 2)}</pre> 
+      /* can delete JSON so transactions dont appear at the top first */
+      <div>
+        
+    <div>
+      <h2>Expenses</h2>
+          {transactions
+          .filter(expenses => expenses.amount < 0 )
+          .map(expenses => (
+          <div>
+            <pre>{JSON.stringify(expenses, null, 2)}</pre>
+          </div>
+            ))}
+          </div>
+          <div>
+      <h2>Income</h2>
+          {transactions
+          .filter(income => income.amount > 0 )
+          .map(income => (
+          <div>
+            <pre>{JSON.stringify(income, null, 2)}</pre>
+          </div>
+            ))}
+          </div>    
+      </div>  
     </div>
   )
 }

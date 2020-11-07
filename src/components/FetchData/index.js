@@ -10,6 +10,7 @@ const GetDataFromApi = async setFetchedTransactions => {
     setFetchedTransactions(response.data.transactions)
   } catch (err) {
     console.error(err.message)
-  }
+  } 
+
 }
 export default GetDataFromApi
