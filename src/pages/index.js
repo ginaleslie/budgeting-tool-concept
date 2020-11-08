@@ -4,6 +4,7 @@ import LocalStorage from '../components/LocalStorage'
 import LineChart from '../components/LineChart'
 import BarChart from '../components/BarChart'
 import DoughnutChart from '../components/DoughnutChart'
+import Report from '../components/ExpensesChart'
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
        <LineChart /> 
        <BarChart /> 
        <DoughnutChart />
+       <Report />
       </div>
     </div>
   )
