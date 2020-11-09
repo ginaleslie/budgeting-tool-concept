@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react'
-// import './styles.css'
+import React, { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
+import StoredDataContext from '../../context/StoredData'
 
 const LocalStorage = () => {
+  const { transactions, setTransactions } = useContext(StoredDataContext)
+
   const [userSettings, setUserSettings] = useState({
     refreshOnLoad: false,
   })
-  const [transactions, setTransactions] = useState(
-    JSON.parse(localStorage.getItem('transactions') || '[]')
-  )
 
   const [isFetching, setIsFetching] = useState(false)
 
@@ -26,6 +25,7 @@ const LocalStorage = () => {
         setIsFetching(false)
       })
   }
+  console.log(transactions)
 
   useEffect(() => {
     console.log('run once')
@@ -52,7 +52,7 @@ const LocalStorage = () => {
         fetch new data
       </button>
       items in store {transactions.length}
-      <pre>{JSON.stringify(transactions, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(transactions, null, 2)}</pre> */}
     </div>
   )
 }
