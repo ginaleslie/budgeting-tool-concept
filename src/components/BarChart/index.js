@@ -1,13 +1,32 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Bar } from 'react-chartjs-2'
+import StoredDataContext from '../../context/StoredData'
 
 function BarChart() {
+  const { transactions } = useContext(StoredDataContext)
+
+  const expenseValuesArray = transactions
+    .filter(expenses => expenses.amount < 0)
+    .map(e => e.amount * -1)
+
+  const incomeValuesArray = transactions
+    .filter(income => income.amount > 0)
+    .map(e => e.amount)
+
+  const expensesSum = expenseValuesArray.reduce(function (a, b) {
+    return a + b
+  }, 0)
+
+  const incomeSum = incomeValuesArray.reduce(function (a, b) {
+    return a + b
+  }, 0)
+
   const data = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+    labels: ['Expenses', 'Income'],
     datasets: [
       {
         label: 'Sales for 2020 (M)',
-        data: [3, 2, 2, 1, 5],
+        data: [expensesSum, incomeSum],
         borderColor: [
           'rgba(255, 206, 86, 0.2)',
           'rgba(255, 206, 86, 0.2)',
@@ -22,26 +41,6 @@ function BarChart() {
           'rgba(255, 206, 86, 0.2)',
           'rgba(255, 206, 86, 0.2)',
         ],
-      },
-      {
-        label: 'Sales for 2019 (M)',
-        data: [2, 3, 2, 2, 3],
-        borderColor: [
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-        ],
-        backgroundColor: [
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-        ],
-        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-        backgroundColor: 'rgba(54, 162, 235, 0.2)',
       },
     ],
   }
@@ -49,7 +48,7 @@ function BarChart() {
   const options = {
     title: {
       display: true,
-      text: 'Line Chart',
+      text: 'Bar Chart',
     },
     scales: {
       yAxis: [

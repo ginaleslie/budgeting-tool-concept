@@ -39,7 +39,7 @@ const SortByDate = () => {
   })
 
   // this gives an object with dates as keys
-  const groups = transactions.reduce((groups, transaction) => {
+  const groups = transactions.reduce(transaction => {
     const date = transaction.date.split('T')[0]
     if (!groups[date]) {
       groups[date] = []

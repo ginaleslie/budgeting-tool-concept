@@ -1,23 +1,19 @@
 import React, { useState } from 'react'
 import LocalStorage from '../components/StoredData'
 import StoredDataContext from '../context/StoredData'
-import IncomeAndExpenses from '../components/IncomeAndExpenses'
+import SortByDate from '../components/SortByDate'
+import Category from '../components/gCategory'
 
-export default function Home() {
+const CategoryPage = () => {
   const [transactions, setTransactions] = useState(
     JSON.parse(localStorage.getItem('transactions') || '[]')
   )
 
   return (
-    <StoredDataContext.Provider
-      value={{
-        transactions,
-        setTransactions,
-      }}
-    >
-      Hello developers!
+    <StoredDataContext.Provider value={{ transactions, setTransactions }}>
       <LocalStorage />
-      <IncomeAndExpenses />
+      <Category />
     </StoredDataContext.Provider>
   )
 }
+export default CategoryPage
