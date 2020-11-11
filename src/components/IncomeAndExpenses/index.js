@@ -1,38 +1,34 @@
-import React, { useContext, useEffect } from 'react'
-
+import React, { useState, useEffect, useContext } from 'react'
 import StoredDataContext from '../../context/StoredData'
-
+import Balance from "../Balance/Balance"
 import '../../styles/Chart.css'
-
 import LineChart from '../LineChart'
 import BarChart from '../BarChart'
 import DoughnutChart from '../DoughnutChart'
 import Report from '../ExpensesChart'
 
 const IncomeAndExpenses = () => {
-  const {
-    transactions,
-    expenseValuesArray,
-    setExpenseValuesArray,
-  } = useContext(StoredDataContext)
+  const { transactions } = useContext(StoredDataContext)
 
-  // useEffect(() => {
-  //   setExpenseValuesArray(
-  //     transactions
-  //       .filter(expenses => expenses.amount < 0)
-  //       .map(e => e.amount * -1)
-  //   )
-  // })
+   const [balance, setBalance] = useState('')
 
-  console.log(expenseValuesArray)
+   const getBalance = () => {
+    const amounts = transactions.map(income => income.amount)
+    const money = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2)
+    setBalance(money)
+  }
+
+  useEffect(() => {
+    getBalance()
+  }, [transactions])
+
   return (
     <div className="chart">
-      {/* <pre>{JSON.stringify(expenseValuesArray, null, 2)}</pre> */}
       <h2>Expenses</h2>
       {transactions
         .filter(expenses => expenses.amount < 0)
         .map(expenses => (
-          <div key={expenses}>
+          <div>
             <pre>{JSON.stringify(expenses, null, 2)}</pre>
           </div>
         ))}
@@ -41,15 +37,17 @@ const IncomeAndExpenses = () => {
       {transactions
         .filter(income => income.amount > 0)
         .map(income => (
-          <div key={income}>
+          <div>
             <pre>{JSON.stringify(income, null, 2)}</pre>
           </div>
         ))}
-
-      {/* <LineChart /> */}
-      <BarChart />
-      {/* <DoughnutChart />
-      <Report /> */}
+      <Balance>
+        <h1 amount={balance}/>
+      </Balance>
+      <BarChart />    
+      <LineChart /> 
+      <DoughnutChart />
+      <Report />
     </div>
   )
 }

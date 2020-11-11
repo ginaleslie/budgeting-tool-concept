@@ -25,7 +25,7 @@ function BarChart() {
     labels: ['Expenses', 'Income'],
     datasets: [
       {
-        label: 'Sales for 2020 (M)',
+        label: 'Transactions for 2020 (T)',
         data: [expensesSum, incomeSum],
         borderColor: [
           'rgba(255, 206, 86, 0.2)',
