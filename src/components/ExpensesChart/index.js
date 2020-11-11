@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const Report = () => {
   const [chartData, setChartData] = useState({})
-  const [transaction, setTransaction] = useState([])
+  // const [transaction, setTransaction] = useState([])
   // const [expenses, setExpenses] = useState([])
 
   const chart = () => {

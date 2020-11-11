@@ -1,5 +1,6 @@
 {
     "extends": [
       "wesbos"
-    ]
+    ],
+    "react/jsx-props-no-spreading": ["disabled"]
   }

@@ -1,45 +1,31 @@
-import React, { useContext } from 'react'
-import { Bar } from 'react-chartjs-2'
-import StoredDataContext from '../../context/StoredData'
+import React, { useContext } from "react"
+import { Bar } from "react-chartjs-2"
+import ApplicationContext from "../../context/Application"
 
 function BarChart() {
-  const { transactions } = useContext(StoredDataContext)
-
-  const expenseValuesArray = transactions
-    .filter(expenses => expenses.amount < 0)
-    .map(e => e.amount * -1)
-
-  const incomeValuesArray = transactions
-    .filter(income => income.amount > 0)
-    .map(e => e.amount)
-
-  const expensesSum = expenseValuesArray.reduce(function (a, b) {
-    return a + b
-  }, 0)
-
-  const incomeSum = incomeValuesArray.reduce(function (a, b) {
-    return a + b
-  }, 0)
+  const { transactions, setIncomeSum, setExpensesSum } = useContext(
+    ApplicationContext
+  )
 
   const data = {
-    labels: ['Expenses', 'Income'],
+    labels: ["Expenses", "Income"],
     datasets: [
       {
-        label: 'Sales for 2020 (M)',
+        label: "Sales for 2020 (M)",
         data: [expensesSum, incomeSum],
         borderColor: [
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
         ],
         backgroundColor: [
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
         ],
       },
     ],
@@ -48,7 +34,7 @@ function BarChart() {
   const options = {
     title: {
       display: true,
-      text: 'Bar Chart',
+      text: "Bar Chart",
     },
     scales: {
       yAxis: [

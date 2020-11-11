@@ -1,0 +1,29 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks"
+import Copy from "./"
+
+<Meta title="360 Menu/Copy" component={Copy} />
+
+# Default:
+
+<Canvas>
+  <Story name="default">
+    <Copy>Copy text</Copy>
+  </Story>
+</Canvas>
+
+# these are all the size options:
+
+<Canvas>
+  <Story name="extra extra small">
+    <Copy size="xxsmall">Copy text</Copy>
+  </Story>
+  <Story name="extra small">
+    <Copy size="xsmall">Copy text</Copy>
+  </Story>
+  <Story name="small">
+    <Copy size="small">Copy text</Copy>
+  </Story>
+  <Story name="bold">
+    <Copy weight="bold">Copy text</Copy>
+  </Story>
+</Canvas>

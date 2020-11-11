@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import LocalStorage from '../components/StoredData'
-import StoredDataContext from '../context/StoredData'
+import ApplicationContext from '../context/Application'
 import SortByDate from '../components/SortByDate'
 
 const SortByDatePage = () => {
@@ -9,10 +9,10 @@ const SortByDatePage = () => {
   )
 
   return (
-    <StoredDataContext.Provider value={{ transactions, setTransactions }}>
+    <ApplicationContext.Provider value={{ transactions, setTransactions }}>
       <LocalStorage />
       <SortByDate />
-    </StoredDataContext.Provider>
+    </ApplicationContext.Provider>
   )
 }
 export default SortByDatePage

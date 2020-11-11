@@ -1,28 +1,29 @@
-import React, { useState, useContext, useEffect } from 'react'
-import StoredDataContext from '../../context/StoredData'
+import React, { useState, useContext, useEffect } from "react"
+import ApplicationContext from "../../context/Application"
 
 const Category = () => {
-  const { transactions, setTransactions } = useContext(StoredDataContext)
+  const { transactions, setTransactions } = useContext(ApplicationContext)
 
   const categories = [
     {
-      title: 'Food',
+      title: "Food",
       stores: [
-        'PNP',
-        'CHECKERS',
-        'WOOLWORTHS',
-        'SEATTLE',
-        'JERRYS',
-        'SuperSpar',
-        'HEALTHFOOD',
-        'SUSHI',
+        "PNP",
+        "CHECKERS",
+        "WOOLWORTHS",
+        "SEATTLE",
+        "JERRYS",
+        "SuperSpar",
+        "HEALTHFOOD",
+        "SUSHI",
       ],
+      transactions: [],
     },
-    { title: 'Medical', stores: ['CLICKS'] },
-    { title: 'Uncategorised', stores: ['LOREM'] },
+    { title: "Medical", stores: ["CLICKS"], transactions: [] },
+    { title: "Uncategorised", stores: ["LOREM"], transactions: [] },
   ]
 
-  const [activeCategory, setActiveCategory] = useState('')
+  const [activeCategory, setActiveCategory] = useState("")
   console.log(activeCategory)
 
   // const groups = transactions.reduce(transaction => {
@@ -51,7 +52,7 @@ const Category = () => {
         <button
           type="button"
           onClick={() => {
-            setActiveCategory('')
+            setActiveCategory("")
             setActiveCategory(current => [...current, category])
           }}
         >

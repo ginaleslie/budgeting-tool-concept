@@ -1,0 +1,46 @@
+:root {
+  --xxsmall: 9px;
+  --xsmall: 12px;
+  --small: 14px;
+  --medium: 16px;
+  --xmedium: 20px;
+  --xxmedium: 24px;
+  --large: 28px;
+  --xlarge: 40px;
+  --xxlarge: 52px;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+/* font size class names */
+.font-xxsmall {
+  font-size: var(--xxsmall);
+}
+.font-xsmall {
+  font-size: var(--xsmall);
+}
+.font-small {
+  font-size: var(--small);
+}
+.font-medium {
+  font-size: var(--medium);
+}
+.font-xmedium {
+  font-size: var(--xmedium);
+}
+.font-xxmedium {
+  font-size: var(--xxmedium);
+}
+.font-large {
+  font-size: var(--large);
+}
+.font-xlarge {
+  font-size: var(--xlarge);
+}
+.font-xxlarge {
+  font-size: var(--xxlarge);
+}
+/* font weight class names */
+.font-light {
+  font-weight: 300;
+}

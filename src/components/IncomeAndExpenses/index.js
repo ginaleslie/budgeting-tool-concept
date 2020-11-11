@@ -1,55 +1,62 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect } from "react"
 
-import StoredDataContext from '../../context/StoredData'
-
-import '../../styles/Chart.css'
-
-import LineChart from '../LineChart'
-import BarChart from '../BarChart'
-import DoughnutChart from '../DoughnutChart'
-import Report from '../ExpensesChart'
+import ApplicationContext from "../../context/Application"
+import Icon from "../Icon"
+import Copy from "../Copy"
+import Heading from "../Heading"
 
 const IncomeAndExpenses = () => {
-  const {
-    transactions,
-    expenseValuesArray,
-    setExpenseValuesArray,
-  } = useContext(StoredDataContext)
+  const { transactions, setIncomeSum, setExpensesSum } = useContext(
+    ApplicationContext
+  )
 
-  // useEffect(() => {
-  //   setExpenseValuesArray(
-  //     transactions
-  //       .filter(expenses => expenses.amount < 0)
-  //       .map(e => e.amount * -1)
-  //   )
-  // })
+  const expenseValuesArray = transactions
+    .filter(expenses => expenses.amount < 0)
+    .map(e => e.amount * -1)
 
-  console.log(expenseValuesArray)
+  const incomeValuesArray = transactions
+    .filter(income => income.amount > 0)
+    .map(e => e.amount)
+
+  const expensesSum = expenseValuesArray.reduce(function (a, b) {
+    return a + b
+  }, 0)
+
+  const incomeSum = incomeValuesArray.reduce(function (a, b) {
+    return a + b
+  }, 0)
+  useEffect(() => {
+    setIncomeSum(incomeSum)
+    setExpensesSum(expensesSum)
+  }, [])
+
   return (
-    <div className="chart">
-      {/* <pre>{JSON.stringify(expenseValuesArray, null, 2)}</pre> */}
-      <h2>Expenses</h2>
-      {transactions
-        .filter(expenses => expenses.amount < 0)
-        .map(expenses => (
-          <div key={expenses}>
-            <pre>{JSON.stringify(expenses, null, 2)}</pre>
+    <div className="income-and-expenses">
+      <div className="income-and-expenses-grid">
+        <div className="income-and-expenses-grid">
+          <Icon name="arrowUp" size="medium" />
+          <div className="pl-xsmall">
+            <Copy color="white" size="xsmall">
+              INCOME
+            </Copy>
+            <Copy color="white" size="medium" weight="medium" pt="pt-xxsmall">
+              R {incomeSum}
+            </Copy>
           </div>
-        ))}
-
-      <h2>Income</h2>
-      {transactions
-        .filter(income => income.amount > 0)
-        .map(income => (
-          <div key={income}>
-            <pre>{JSON.stringify(income, null, 2)}</pre>
+        </div>
+        <div className="vertical-line"></div>
+        <div className="income-and-expenses-grid">
+          <div className="pr-xsmall">
+            <Copy color="white" size="xsmall">
+              EXPENSES
+            </Copy>
+            <Copy color="white" size="medium" weight="medium" pt="pt-xxsmall">
+              R {expensesSum}
+            </Copy>
           </div>
-        ))}
-
-      {/* <LineChart /> */}
-      <BarChart />
-      {/* <DoughnutChart />
-      <Report /> */}
+          <Icon name="arrowDown" size="medium" />
+        </div>
+      </div>
     </div>
   )
 }

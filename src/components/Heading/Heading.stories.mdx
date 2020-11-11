@@ -1,0 +1,35 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks"
+import Heading from "./"
+
+<Meta title="360 Menu/Heading" component={Heading} />
+
+# Default:
+
+<Canvas>
+  <Story name="default">
+    <Heading>Heading text</Heading>
+  </Story>
+</Canvas>
+
+# these are all the size options:
+
+<Canvas>
+  <Story name="extra medium">
+    <Heading size="xmedium">Heading text</Heading>
+  </Story>
+  <Story name="extra extra medium">
+    <Heading size="xxmedium">Heading text</Heading>
+  </Story>
+  <Story name="large">
+    <Heading size="large">Heading text</Heading>
+  </Story>
+  <Story name="xlarge">
+    <Heading size="xlarge">Heading text</Heading>
+  </Story>
+  <Story name="xxlarge">
+    <Heading size="xxlarge">Heading text</Heading>
+  </Story>
+  <Story name="bold">
+    <Heading weight="bold">Heading text</Heading>
+  </Story>
+</Canvas>

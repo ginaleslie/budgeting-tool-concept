@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from 'react'
-import StoredDataContext from '../../context/StoredData'
+import ApplicationContext from '../../context/Application'
 
 const SortByDate = () => {
-  const { transactions, setTransactions } = useContext(StoredDataContext)
+  const { transactions, setTransactions } = useContext(ApplicationContext)
   const months = [
     'January',
     'February',

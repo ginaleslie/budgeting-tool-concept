@@ -1,0 +1,18 @@
+.login-container {
+  max-width: 350px;
+  display: block;
+  margin: 70px auto 0;
+}
+.float {
+  float: right;
+}
+.login-btn {
+  width: 100%;
+  border: none;
+  background: var(--blue-500);
+  border-radius: 3px;
+  color: white;
+  padding: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}

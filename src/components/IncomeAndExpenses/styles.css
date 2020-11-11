@@ -1,0 +1,14 @@
+.income-and-expenses {
+  width: 200px;
+  display: block;
+  margin: 20px auto;
+}
+.income-and-expenses-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.vertical-line {
+  border-left: 2px solid #f9fafb72;
+  height: 37px;
+}

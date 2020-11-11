@@ -1,0 +1,46 @@
+:root {
+  /* font sizes */
+  --xxsmall: 9px;
+  --xsmall: 12px;
+  --small: 14px;
+  --medium: 16px;
+  --xmedium: 20px;
+  --xxmedium: 24px;
+  --large: 28px;
+  --xlarge: 40px;
+  --xxlarge: 52px;
+  --xxlarge: 66px;
+  /* font weight */
+  --thin: 300;
+  --normal: normal;
+  --medium: 500;
+  --bold: bold;
+  /* colors */
+  --white: #ffffff;
+  --wealth-grey-300: #737b81;
+  --wealth-grey-500: #333e48;
+  --neutral-500: #bcc4ce;
+  --neutral-700: #8a929c;
+  --blue-100: #e6f1fa;
+  --blue-500: #0075c9;
+  --blue-700: #0151a3;
+  --blue-300: #53a2db;
+  --info-600: #0163b8;
+  --info-700: #0151a3;
+  --centennial-500: #00194d;
+  --error-400: #ea412a;
+}
+
+/* font weight class names */
+.font-light {
+  font-weight: var(--thin);
+}
+.font-normal {
+  font-weight: var(--normal);
+}
+.font-medium {
+  font-weight: var(--medium);
+}
+.font-bold {
+  font-weight: var(--bold);
+}

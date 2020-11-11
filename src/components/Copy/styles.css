@@ -1,0 +1,61 @@
+/* ----- font family ----- */
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+/* ----- font sizes ----- */
+
+.font-xmedium {
+  font-size: var(--xmedium);
+}
+.font-xxmedium {
+  font-size: var(--xxmedium);
+}
+.font-large {
+  font-size: var(--large);
+}
+.font-xlarge {
+  font-size: var(--xlarge);
+}
+.font-xxlarge {
+  font-size: var(--xxlarge);
+}
+/* ----- font weight ----- */
+
+.font-light {
+  font-weight: var(--thin);
+}
+.font-regular {
+  font-weight: var(--regular);
+}
+.font-medium {
+  font-weight: var(--medium);
+}
+.font-bold {
+  font-weight: var(--bold);
+}
+/* ----- font colors ----- */
+
+.color-blue-500 {
+  color: var(--blue-500);
+}
+.color-blue-700 {
+  color: var(--blue-700);
+}
+.color-wealth-grey-500 {
+  color: var(--wealth-grey-500);
+}
+.color-wealth-grey-300 {
+  color: var(--wealth-grey-300);
+}
+.color-error-400 {
+  color: var(--error-400);
+}
+.color-alert-500 {
+  color: var(--alert-500);
+}
+.color-white {
+  color: var(--white);
+}
+.color-centennial-500 {
+  color: var(--centennial-500);
+}

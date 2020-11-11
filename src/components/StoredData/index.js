@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useContext } from 'react'
-import axios from 'axios'
-import StoredDataContext from '../../context/StoredData'
+import React, { useEffect, useState, useContext } from "react"
+import axios from "axios"
+import ApplicationContext from "../../context/Application"
 
 const LocalStorage = () => {
-  const { transactions, setTransactions } = useContext(StoredDataContext)
+  const { transactions, setTransactions } = useContext(ApplicationContext)
 
   const [userSettings, setUserSettings] = useState({
     refreshOnLoad: false,
@@ -15,12 +15,12 @@ const LocalStorage = () => {
     setIsFetching(true)
     axios
       .get(
-        'https://indie-transaction-api.netlify.app//.netlify/functions/api/api/'
+        "https://indie-transaction-api.netlify.app//.netlify/functions/api/api/"
       )
       .then(response => {
         const data = [...transactions, ...response?.data?.transactions]
 
-        localStorage.setItem('transactions', JSON.stringify(data))
+        localStorage.setItem("transactions", JSON.stringify(data))
         setTransactions(data)
         setIsFetching(false)
       })
@@ -28,7 +28,7 @@ const LocalStorage = () => {
   console.log(transactions)
 
   useEffect(() => {
-    console.log('run once')
+    console.log("run once")
     if (!isFetching) {
       if (userSettings.refreshOnLoad) {
         fetchData()
@@ -42,7 +42,7 @@ const LocalStorage = () => {
       <button
         type="button"
         onClick={() => {
-          localStorage.removeItem('transactions')
+          localStorage.removeItem("transactions")
           setTransactions([])
         }}
       >
