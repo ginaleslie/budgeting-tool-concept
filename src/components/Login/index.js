@@ -12,12 +12,14 @@ import CheckBox from "../Checkbox"
 import gif from "../../../static/images/loader.gif"
 
 const Login = () => {
-  const { setUserLoggedin } = useContext(ApplicationContext)
+  const { setUserLoggedin, setActiveTab } = useContext(ApplicationContext)
+  const buttons = ["Overview", "Track", "Budget"]
 
   const login = () => {
     const haventLoggedIn = localStorage.haventLoggedIn === "true" // change "true" to true and others to false
     setUserLoggedin(haventLoggedIn)
     localStorage.setItem("haventLoggedIn", !haventLoggedIn)
+    setActiveTab(buttons[0])
   }
   useEffect(() => {
     setUserLoggedin()

@@ -12,11 +12,7 @@ export default function Home() {
   const [incomeSum, setIncomeSum] = useState(0)
   const [expensesSum, setExpensesSum] = useState(0)
 
-  const [displayOverview, setDisplayOverview] = useState(true)
-
-  const [displayTrack, setDisplayTrack] = useState(false)
-
-  const [displayBudget, setDisplayBudget] = useState(false)
+  const [activeTab, setActiveTab] = useState("")
 
   const [transactions, setTransactions] = useState(
     JSON.parse(localStorage.getItem("transactions") || "[]")
@@ -43,45 +39,23 @@ export default function Home() {
         setIncomeSum,
         expensesSum,
         setExpensesSum,
-        setDisplayTrack,
-        setDisplayBudget,
-        setDisplayOverview,
+        activeTab,
+        setActiveTab,
       }}
     >
-      {!userLoggedin && <Login />}
-      {/* {if (userLoggedin, displayOverview, !displayTrack, !displayBudget)  { return(
-        <div>
-          <Navigation headingForNav="Welcome" />
-          <Overview />
-        </div>
-      )} else if ()} */}
-      {(() => {
-        if ((userLoggedin, displayOverview, !displayTrack, !displayBudget)) {
-          return (
-            <div>
-              <Navigation headingForNav="Welcome" />
-              <Overview />
-            </div>
-          )
-        } else if (
-          (userLoggedin, !displayOverview, !displayTrack, displayBudget)
-        ) {
-          return (
-            <div>
-              <Navigation headingForNav="Budget" />
-              <Budget />
-            </div>
-          )
-        } else {
-          return (
-            <div>
-              <Navigation headingForNav="sss" />
-              <Track />
-            </div>
-          )
+      <Navigation
+        headingForNav={
+          activeTab === "Overview"
+            ? "Overview stuff"
+            : activeTab === "Budget"
+            ? "Budget stuff"
+            : "Track stuff"
         }
-      })()}
-
+      />
+      {!userLoggedin && <Login />}
+      {activeTab === "Overview" ? <Overview /> : null}
+      {activeTab === "Track" ? <Track /> : null}
+      {activeTab === "Budget" ? <Budget /> : null}
       <StoredData />
     </ApplicationContext.Provider>
   )

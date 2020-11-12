@@ -3,7 +3,7 @@ import { Bar } from "react-chartjs-2"
 import ApplicationContext from "../../context/Application"
 
 function BarChart() {
-  const { transactions, setIncomeSum, setExpensesSum } = useContext(
+  const { transactions, incomeSum, expensesSum } = useContext(
     ApplicationContext
   )
 

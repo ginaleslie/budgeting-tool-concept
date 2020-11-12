@@ -8,34 +8,17 @@ import Icon from "../Icon"
 import user from "../../../static/images/user.png"
 import Heading from "../Heading"
 // import NavButtons from "../NavButton"
+import Overview from "../Overview"
+import Track from "../Track"
+import Budget from "../Budget"
+
 import IncomeAndExpenses from "../IncomeAndExpenses"
 
 const Navigation = ({ headingForNav }) => {
-  const {
-    incomeSum,
-    expensesSum,
-    setDisplayTrack,
-    setDisplayBudget,
-    setDisplayOverview,
-  } = useContext(ApplicationContext)
-  console.log(incomeSum)
+  const { setActiveTab, activeTab } = useContext(ApplicationContext)
+  const buttons = ["Overview", "Track", "Budget"]
 
-  const goToBudget = () => {
-    setDisplayBudget(true)
-    setDisplayOverview(false)
-    setDisplayTrack(false)
-  }
-  const goToOverview = () => {
-    setDisplayBudget(false)
-    setDisplayOverview(true)
-    setDisplayTrack(false)
-  }
-
-  const goToTrack = () => {
-    setDisplayBudget(false)
-    setDisplayOverview(false)
-    setDisplayTrack(true)
-  }
+  //   const [active, setActive] = useState(buttons[0])
 
   return (
     <div className="navigation">
@@ -60,12 +43,22 @@ const Navigation = ({ headingForNav }) => {
           {headingForNav}
         </Heading>
         <IncomeAndExpenses />
+
+        <div>
+          {buttons.map(type => (
+            <button
+              key={type}
+              active={activeTab === type}
+              onClick={() => setActiveTab(type)}
+            >
+              {type}
+            </button>
+          ))}
+        </div>
       </div>
-      <div>
-        <button onClick={() => goToOverview()}>Overview</button>
-        <button onClick={() => goToTrack()}>Track</button>
-        <button onClick={() => goToBudget()}>Budget</button>
-      </div>
+
+      {/* {(active == "Ovessssrview" && <Overview />)(active == buttons[1]) &&
+        (<Track />)(active == buttons[2]) && <Budget />} */}
     </div>
   )
 }
