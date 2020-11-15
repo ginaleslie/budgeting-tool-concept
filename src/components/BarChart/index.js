@@ -1,9 +1,10 @@
 import React, { useContext } from "react"
 import { Bar } from "react-chartjs-2"
 import ApplicationContext from "../../context/Application"
+import '../../gobalStyles/Chart.css'
 
 function BarChart() {
-  const { transactions, setIncomeSum, setExpensesSum } = useContext(
+  const { incomeSum, expensesSum } = useContext(
     ApplicationContext
   )
 
@@ -11,21 +12,21 @@ function BarChart() {
     labels: ["Expenses", "Income"],
     datasets: [
       {
-        label: "Sales for 2020 (M)",
+        label: "Transactions (T)",
         data: [expensesSum, incomeSum],
         borderColor: [
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
+          "red",
+          "red",
+          "red",
+          "red",
+          "red",
         ],
         backgroundColor: [
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
+          "green",
+          "green",
+          "green",
+          "green",
+          "green",
         ],
       },
     ],

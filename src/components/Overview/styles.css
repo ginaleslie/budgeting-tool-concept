@@ -1,0 +1,61 @@
+.body{
+    background-color: #F9FAFB;
+    font-weight: 12px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto ;
+    padding: 90px 100px 0px 100px ; 
+    gap: 30px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    padding: 60px;
+    font-size: 30px;
+    text-align: center;
+    width: 450px;
+  }
+
+  .grid-container2 {
+    display: grid;
+    grid-template-columns: auto ;
+    padding: 90px 100px 0px 100px ; 
+    gap: 30px;
+  }
+  .grid-item2 {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 60px;
+    font-size: 30px;
+    text-align: center;
+    width: 1075px;
+    
+  }
+
+  .Chart {
+      width: 450px;
+  }
+
+  .Summery {
+      position: relative;
+      border: 1px solid black;
+      width: 450px;
+      height: 30px;
+      padding-left: 40px; 
+  }
+
+  .left{
+      position: absolute;
+      left: 10px;
+  }
+
+  .right{
+    position: absolute;
+    right: 10px;
+}
+
+
+   
+ 

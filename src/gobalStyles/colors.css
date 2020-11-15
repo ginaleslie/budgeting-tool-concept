@@ -1,10 +1,21 @@
 :root {
   --red: #b00;
   --blue: #00b;
+  --blue500: #0075C9;
+  --grey300: #737B81;
 }
 .color-blue {
   color: var(--blue);
 }
+
+.color-blue500 {
+  color: var(--blue500)
+}
+
 .color-red {
   color: var(--red);
+}
+
+.color-grey300 {
+  color: var(--grey300)
 }

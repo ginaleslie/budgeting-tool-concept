@@ -28,7 +28,7 @@ const IncomeAndExpenses = () => {
   useEffect(() => {
     setIncomeSum(incomeSum)
     setExpensesSum(expensesSum)
-  }, [])
+  })
 
   return (
     <div className="income-and-expenses">
