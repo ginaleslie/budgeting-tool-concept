@@ -2,6 +2,7 @@
   background: #f9fafb;
   display: flex;
   justify-content: center;
+  font-family: "Roboto", sans-serif;
 }
 
 .track-max-width {
@@ -51,21 +52,27 @@
 .track-back-button {
   border: none;
   outline: none;
-  background: var(--blue-500);
-  color: white;
-  padding: 7px 12px;
+  font-family: "Roboto", sans-serif;
+  background: transparent;
+  color: var(--blue-500);
+  padding: 7px 0;
   border-radius: 4px;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 600;
 }
 .arrow-back {
-  border: solid white;
+  border: solid var(--blue-500);
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 3px;
   transition: 0.5s all ease-in;
   margin-right: 5px;
+  cursor: pointer;
 }
-.left {
+.arrow-left {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
+}
+.capitalize {
+  text-transform: capitalize;
 }
