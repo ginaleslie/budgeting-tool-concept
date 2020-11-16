@@ -1,0 +1,26 @@
+.category-button {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e0e4e9;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 15px;
+  text-transform: capitalize;
+  color: var(--wealth-grey-300);
+  max-width: 641px;
+  margin-bottom: 9px;
+  cursor: pointer;
+}
+.arrow {
+  border: solid var(--blue-500);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 5px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}

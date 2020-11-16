@@ -9,10 +9,15 @@ import Copy from "../Copy"
 import TextInput from "../TextInput"
 import PasswordInput from "../PasswordInput"
 import CheckBox from "../Checkbox"
-import gif from "../../../static/images/loader.gif"
+// import gif from "../../../static/images/loader.gif"
+import { PageLoader } from "@indiefin/galaxy-page-loader"
+import LoginButton from "../LoginButton"
+// import Category from "../Categories"
+//import Bar from "../BarChartCategories"
 
 const Login = () => {
-  const { setUserLoggedin } = useContext(ApplicationContext)
+  const { setUserLoggedin, setActiveTab } = useContext(ApplicationContext)
+  const buttons = ["Overview", "Track", "Budget"]
 
   const login = () => {
     const haventLoggedIn = localStorage.haventLoggedIn === "true" // change "true" to true and others to false
@@ -21,12 +26,11 @@ const Login = () => {
   }
   useEffect(() => {
     setUserLoggedin()
-  })
+  }, [])
   return (
     <>
-      {" "}
       <div className="login-container">
-        <img src={gif} alt="loading..." />
+        <PageLoader />
         <Heading
           size="xxmedium"
           color="centennial-500"
@@ -66,9 +70,7 @@ const Login = () => {
           <div className="pt-large">
             <CheckBox />
           </div>
-          <button type="button" className="login-btn" onClick={() => login()}>
-            Login
-          </button>
+          <LoginButton click={() => login()}>Login</LoginButton>
           <Copy
             size="medium"
             color="wealth-grey-300"

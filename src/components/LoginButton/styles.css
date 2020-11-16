@@ -1,0 +1,12 @@
+.login-btn {
+  width: 100%;
+  max-width: 360px;
+  border: none;
+  background: var(--blue-500);
+  border-radius: 3px;
+  color: white;
+  padding: 18px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+}

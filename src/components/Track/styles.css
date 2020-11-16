@@ -1,0 +1,71 @@
+.track-bg {
+  background: #f9fafb;
+  display: flex;
+  justify-content: center;
+}
+
+.track-max-width {
+  max-width: 641px;
+  width: 100%;
+}
+.track-chart-max-width {
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.track-chart-container {
+  background: #fefefe;
+  padding: 20px;
+  max-width: 480px;
+  margin-top: 30px;
+  border: 1px solid #e9ecee;
+  border-radius: 4px;
+}
+.square {
+  height: 9px;
+  width: 9px;
+  margin-right: 10px;
+}
+.track-flex {
+  display: flex;
+  align-items: center;
+}
+.track-flex-money {
+  display: flex;
+}
+.track-flex-money-first-child {
+  padding-right: 20px;
+}
+.hide-element {
+  display: none;
+}
+
+.arrow {
+  border: solid var(--blue-500);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 5px;
+  transition: 0.5s all ease-in;
+}
+.track-back-button {
+  border: none;
+  outline: none;
+  background: var(--blue-500);
+  color: white;
+  padding: 7px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+.arrow-back {
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transition: 0.5s all ease-in;
+  margin-right: 5px;
+}
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}

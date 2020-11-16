@@ -1,0 +1,12 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks"
+import NavButton from "./"
+
+<Meta title="360 Menu/NavButton" component={NavButton} />
+
+# Default:
+
+<Canvas>
+  <Story name="default">
+    <NavButton click={() => alert("Button clicked")}>Overview</NavButton>
+  </Story>
+</Canvas>

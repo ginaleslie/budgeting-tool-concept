@@ -33,6 +33,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
+    "@indiefin/galaxy-base": "^1.35.0",
+    "@indiefin/galaxy-button": "^1.15.0",
+    "@indiefin/galaxy-chat-button": "^1.4.0",
+    "@indiefin/galaxy-link-block": "^1.6.0",
+    "@indiefin/galaxy-page-loader": "^1.4.0",
     "@storybook/addon-actions": "^6.0.28",
     "@storybook/addon-essentials": "^6.0.28",
     "@storybook/addon-links": "^6.0.28",

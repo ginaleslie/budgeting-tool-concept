@@ -3,7 +3,6 @@ import "../gobalStyles/reset.css"
 import ApplicationContext from "../context/Application"
 import Login from "../components/Login"
 import Overview from "../components/Overview"
-import StoredData from "../components/StoredData"
 import Navigation from "../components/Navigation"
 import Track from "../components/Track"
 import Budget from "../components/Budget"
@@ -12,11 +11,9 @@ export default function Home() {
   const [incomeSum, setIncomeSum] = useState(0)
   const [expensesSum, setExpensesSum] = useState(0)
 
-  const [displayOverview, setDisplayOverview] = useState(true)
+  const [activeCategory, setActiveCategory] = useState(null)
 
-  const [displayTrack, setDisplayTrack] = useState(false)
-
-  const [displayBudget, setDisplayBudget] = useState(false)
+  const [activeTab, setActiveTab] = useState("Overview")
 
   const [transactions, setTransactions] = useState(
     JSON.parse(localStorage.getItem("transactions") || "[]")
@@ -43,46 +40,29 @@ export default function Home() {
         setIncomeSum,
         expensesSum,
         setExpensesSum,
-        setDisplayTrack,
-        setDisplayBudget,
-        setDisplayOverview,
+        activeTab,
+        setActiveTab,
+        activeCategory,
+        setActiveCategory,
       }}
     >
-      {!userLoggedin && <Login />}
-      {/* {if (userLoggedin, displayOverview, !displayTrack, !displayBudget)  { return(
-        <div>
-          <Navigation headingForNav="Welcome" />
-          <Overview />
-        </div>
-      )} else if ()} */}
-      {(() => {
-        if ((userLoggedin, displayOverview, !displayTrack, !displayBudget)) {
-          return (
-            <div>
-              <Navigation headingForNav="Welcome" />
-              <Overview />
-            </div>
-          )
-        } else if (
-          (userLoggedin, !displayOverview, !displayTrack, displayBudget)
-        ) {
-          return (
-            <div>
-              <Navigation headingForNav="Budget" />
-              <Budget />
-            </div>
-          )
-        } else {
-          return (
-            <div>
-              <Navigation headingForNav="sss" />
-              <Track />
-            </div>
-          )
-        }
-      })()}
+      {!userLoggedin ? (
+        <Login />
+      ) : (
+        <Navigation
+          headingForNav={
+            activeTab === "Overview"
+              ? "Overview stuff"
+              : activeTab === "Budget"
+              ? "Budget stuff"
+              : "Track your spending."
+          }
+        />
+      )}
 
-      <StoredData />
+      {(activeTab === "Overview") & userLoggedin ? <Overview /> : null}
+      {(activeTab === "Track") & userLoggedin ? <Track /> : null}
+      {(activeTab === "Budget") & userLoggedin ? <Budget /> : null}
     </ApplicationContext.Provider>
   )
 }

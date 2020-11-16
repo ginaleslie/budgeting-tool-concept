@@ -3,7 +3,6 @@ import React, { useContext, useEffect } from "react"
 import ApplicationContext from "../../context/Application"
 import Icon from "../Icon"
 import Copy from "../Copy"
-import Heading from "../Heading"
 
 const IncomeAndExpenses = () => {
   const { transactions, setIncomeSum, setExpensesSum } = useContext(
@@ -25,6 +24,7 @@ const IncomeAndExpenses = () => {
   const incomeSum = incomeValuesArray.reduce(function (a, b) {
     return a + b
   }, 0)
+
   useEffect(() => {
     setIncomeSum(incomeSum)
     setExpensesSum(expensesSum)

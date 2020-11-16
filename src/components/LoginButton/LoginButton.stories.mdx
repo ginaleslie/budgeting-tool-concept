@@ -1,0 +1,12 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks"
+import LoginButton from "./"
+
+<Meta title="360 Menu/LoginButton" component={LoginButton} />
+
+# Default:
+
+<Canvas>
+  <Story name="default">
+    <LoginButton click={() => alert("Button clicked")}>Overview</LoginButton>
+  </Story>
+</Canvas>

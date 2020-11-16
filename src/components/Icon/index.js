@@ -5,12 +5,17 @@ import Menu from "./assets/menu"
 import Notifications from "./assets/notifications"
 import ArrowDown from "./assets/arrowDown"
 import ArrowUp from "./assets/arrowUp"
+import Calendar from "./assets/calendar"
+import Check from "./assets/check"
 
 const Icon = ({ name, size }) => {
   let iconSize
   switch (size) {
     case "small":
       iconSize = 10
+      break
+    case "lsmall":
+      iconSize = 13
       break
     case "medium":
       iconSize = 18
@@ -83,6 +88,28 @@ const Icon = ({ name, size }) => {
       )
       break
 
+    case "calendar":
+      content = (
+        <Calendar
+          style={{
+            height: `${iconSize}px`,
+            width: `${iconSize}px`,
+          }}
+        />
+      )
+      break
+
+    case "check":
+      content = (
+        <Check
+          style={{
+            height: `${iconSize}px`,
+            width: `${iconSize}px`,
+          }}
+        />
+      )
+      break
+
     default:
       break
   }
@@ -107,7 +134,7 @@ Icon.propTypes = {
   /**
    * size of the icon to display
    */
-  size: PropTypes.oneOf(["small", "medium", "large", "xlarge"]),
+  size: PropTypes.oneOf(["small", "lsmall", "medium", "large", "xlarge"]),
 }
 
 Icon.defaultProps = {
