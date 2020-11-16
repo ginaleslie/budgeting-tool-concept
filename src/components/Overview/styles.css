@@ -8,34 +8,46 @@
     padding: 90px 100px 0px 100px ; 
     gap: 30px;
   }
+  @media screen and (max-width: 400px){
+    .grid-container{
+      grid-template-columns: auto;
+    }
+  }
   .grid-item {
     background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    border: 2px solid #E0E4E9;
     border-radius: 5px;
     padding: 60px;
     font-size: 30px;
-    text-align: center;
-    width: 450px;
+    width: 80%;
   }
 
   .grid-container2 {
     display: grid;
     grid-template-columns: auto ;
     padding: 90px 100px 0px 100px ; 
-    gap: 30px;
+    gap: 30px;  
+}
+
+  .catagory {
+    float: left;
   }
+
+  .price {
+    float: right;
+  } 
+      
   .grid-item2 {
     background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 60px;
-    font-size: 30px;
-    text-align: center;
-    width: 1075px;
-    
+    border: 2px solid #E0E4E9;
+    border-radius: 5px;
+    padding: 25px;
+    font-size: 20px;  
   }
 
   .Chart {
-      width: 450px;
+      height:41vh; 
+      width:37vw;   
   }
 
   .Summery {
@@ -55,6 +67,110 @@
     position: absolute;
     right: 10px;
 }
+
+.Summary {
+float: right;
+font-weight: meduim;
+
+}
+
+.Heading-top {
+right:-110px;
+top:40px;
+
+}
+
+.Heading-chart {
+  top:-29px;
+  text-align: center;
+}
+
+.Heading-bottom {
+  
+}
+
+.info-dot {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin: 0px;
+  border-radius: 3px;
+  margin-right: 20px;
+}
+
+.blue {
+  background: #0151A3;
+}
+
+.info-dot2 {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  border-radius: 3px;
+}
+
+.green {
+  background: #2AA12A;
+}
+
+.face {
+  position: absolute;
+  left: 20px;
+  top: 300px;
+
+}
+
+.line {
+  border-top: 1px solid #F3F5F7;
+}
+
+.Add-product{
+  float: right;
+}
+
+.Paste-icon {
+  float: right;
+}
+
+.Spent{
+  background-color: #ffffff;
+  color:#f26901
+}
+
+/* Flexbox styling */
+.box {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 17px;
+  flex: 1 1 0;
+}
+
+.box {
+ 
+  padding: 0.5em;
+  white-space: nowrap;
+}
+
+
+.box>* {
+  margin: 0.5em;
+  color: white;
+  padding: 0.5em;
+}
+
+.box {
+  display: flex;
+}
+
+.box>* {
+  flex: 1 1 0 ;
+}
+
+.box {
+  margin-bottom: 1em;
+}
+/* Flexbox styling */
 
 
    

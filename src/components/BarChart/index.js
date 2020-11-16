@@ -35,7 +35,7 @@ function BarChart() {
   const options = {
     title: {
       display: true,
-      text: "Bar Chart",
+      text: "",
     },
     scales: {
       yAxis: [
