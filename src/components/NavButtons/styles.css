@@ -1,0 +1,21 @@
+.active,
+.notActive {
+  background: transparent;
+  outline: none;
+  font-size: var(--medium);
+  margin: 0 10px 0 10px;
+  line-height: var(--xxmedium);
+  width: 80px;
+}
+.notActive {
+  color: white;
+  border: none;
+}
+
+.active {
+  color: #53a2db;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 4px solid #53a2db;
+}

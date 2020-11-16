@@ -1,0 +1,25 @@
+.stored-data-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #f9fafb;
+}
+.max-width-stored-data {
+  max-width: 641px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0 12px 0;
+}
+.stored-data-calender {
+  display: flex;
+}
+.refresh-button {
+  border: none;
+  outline: none;
+  background: grey;
+}
+.calendar-styling {
+  margin-top: -5px;
+  padding-left: 5px;
+}

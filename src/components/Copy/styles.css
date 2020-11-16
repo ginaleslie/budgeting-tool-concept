@@ -21,16 +21,16 @@
 }
 /* ----- font weight ----- */
 
-.font-light {
+.font-weight-light {
   font-weight: var(--thin);
 }
-.font-regular {
+.font-weight-regular {
   font-weight: var(--regular);
 }
-.font-medium {
+.font-weight-medium {
   font-weight: var(--medium);
 }
-.font-bold {
+.font-weight-bold {
   font-weight: var(--bold);
 }
 /* ----- font colors ----- */

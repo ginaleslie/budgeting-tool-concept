@@ -1520,6 +1520,26 @@
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
   integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
 
+"@indiefin/galaxy-base@^1.35.0":
+  version "1.35.0"
+  resolved "https://registry.yarnpkg.com/@indiefin/galaxy-base/-/galaxy-base-1.35.0.tgz#3ec05eb92de1324261f4f496b09953c895514de6"
+  integrity sha512-lceZDSAt/xMn3X2yGedsZJ8nl68z7JVQIteM3iydPqozqHl2Q326RHRqHTkuGkaZzHvIgKsvb8FZU0wkhw/n1A==
+
+"@indiefin/galaxy-button@^1.15.0":
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/@indiefin/galaxy-button/-/galaxy-button-1.15.0.tgz#753f1c71a26b629e0d0408346b32ec02fc243a2b"
+  integrity sha512-Aji17ercujO6Pl0LkOyIWoeZk8ywnqCNz9JcZx1tajnu7NMDHTgchL5MyKzbhXmXStCIuDXsp62uDQhvX4B70g==
+
+"@indiefin/galaxy-link-block@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@indiefin/galaxy-link-block/-/galaxy-link-block-1.6.0.tgz#f033553460107737df17ba5acc8e1657ab2a6969"
+  integrity sha512-pcOy7iOu3mgKYeamR8hmpfXP10zPyywW0v6GJdHIoH7vW6flMlee6FwocBUGKky4gKb/+3acxnulHzPku8X39w==
+
+"@indiefin/galaxy-page-loader@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@indiefin/galaxy-page-loader/-/galaxy-page-loader-1.4.0.tgz#2be723b308840f95628797dbb790711883e2fc53"
+  integrity sha512-cXKd6e8IpVttlsNRrOvYCNORBA4oCfteziYU+nOotlBVNtu3MoqPv+XmfWjWkGbSsmlSA0HEVfsforhspld+LQ==
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"

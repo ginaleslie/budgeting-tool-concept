@@ -3,7 +3,6 @@ import "../gobalStyles/reset.css"
 import ApplicationContext from "../context/Application"
 import Login from "../components/Login"
 import Overview from "../components/Overview"
-import StoredData from "../components/StoredData"
 import Navigation from "../components/Navigation"
 import Track from "../components/Track"
 import Budget from "../components/Budget"
@@ -12,7 +11,9 @@ export default function Home() {
   const [incomeSum, setIncomeSum] = useState(0)
   const [expensesSum, setExpensesSum] = useState(0)
 
-  const [activeTab, setActiveTab] = useState("")
+  const [activeCategory, setActiveCategory] = useState(null)
+
+  const [activeTab, setActiveTab] = useState("Overview")
 
   const [transactions, setTransactions] = useState(
     JSON.parse(localStorage.getItem("transactions") || "[]")
@@ -41,22 +42,27 @@ export default function Home() {
         setExpensesSum,
         activeTab,
         setActiveTab,
+        activeCategory,
+        setActiveCategory,
       }}
     >
-      <Navigation
-        headingForNav={
-          activeTab === "Overview"
-            ? "Overview stuff"
-            : activeTab === "Budget"
-            ? "Budget stuff"
-            : "Track stuff"
-        }
-      />
-      {!userLoggedin && <Login />}
-      {activeTab === "Overview" ? <Overview /> : null}
-      {activeTab === "Track" ? <Track /> : null}
-      {activeTab === "Budget" ? <Budget /> : null}
-      <StoredData />
+      {!userLoggedin ? (
+        <Login />
+      ) : (
+        <Navigation
+          headingForNav={
+            activeTab === "Overview"
+              ? "Overview stuff"
+              : activeTab === "Budget"
+              ? "Budget stuff"
+              : "Track your spending."
+          }
+        />
+      )}
+
+      {(activeTab === "Overview") & userLoggedin ? <Overview /> : null}
+      {(activeTab === "Track") & userLoggedin ? <Track /> : null}
+      {(activeTab === "Budget") & userLoggedin ? <Budget /> : null}
     </ApplicationContext.Provider>
   )
 }
