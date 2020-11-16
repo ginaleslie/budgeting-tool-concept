@@ -7,6 +7,7 @@ import ArrowDown from "./assets/arrowDown"
 import ArrowUp from "./assets/arrowUp"
 import Calendar from "./assets/calendar"
 import Check from "./assets/check"
+import Face from "./assets/face"
 
 const Icon = ({ name, size }) => {
   let iconSize
@@ -25,6 +26,9 @@ const Icon = ({ name, size }) => {
       break
     case "xlarge":
       iconSize = 48
+      break
+    case "xxlarge":
+      iconSize = 64
       break
 
     default:
@@ -102,6 +106,17 @@ const Icon = ({ name, size }) => {
     case "check":
       content = (
         <Check
+          style={{
+            height: `${iconSize}px`,
+            width: `${iconSize}px`,
+          }}
+        />
+      )
+      break
+
+    case "face":
+      content = (
+        <Face
           style={{
             height: `${iconSize}px`,
             width: `${iconSize}px`,
