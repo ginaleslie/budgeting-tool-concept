@@ -162,15 +162,17 @@ const Track = () => {
               Money in
             </Heading>
           </div>
-          <Heading
-            size="xmedium"
-            color="centennial-500"
-            weight="medium"
-            pt="pt-large"
-            pb="pb-large"
-          >
-            {activeCategory === null ? "Placeholder" : activeCategory}
-          </Heading>
+          <div className="capitalize">
+            <Heading
+              size="xmedium"
+              color="centennial-500"
+              weight="medium"
+              pt="pt-large"
+              pb="pb-large"
+            >
+              {activeCategory === null ? "Placeholder" : activeCategory}
+            </Heading>
+          </div>
           {activeCategory !== null
             ? transactions
                 .filter(

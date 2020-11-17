@@ -54,19 +54,19 @@
   outline: none;
   font-family: "Roboto", sans-serif;
   background: transparent;
-  color: var(--blue-500);
+  color: #0075c9;
   padding: 7px 0;
   border-radius: 4px;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 .arrow-back {
-  border: solid var(--blue-500);
+  border: solid #0075c9;
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 3px;
   transition: 0.5s all ease-in;
-  margin-right: 5px;
+  margin-right: 4px;
   cursor: pointer;
 }
 .arrow-left {
