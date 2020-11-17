@@ -22,19 +22,36 @@
 .color-red {
   color: var(--red);
 }
-
+:root {
+  --red: #b00;
+  --blue: #00b;
+  --blue500: #0075C9;
+  --grey300: #737B81;
+  --grey500: #333E48;
+  --contenial500: #00194D;
+  --blue700: #0151A3;
+}
+.color-blue {
+  color: var(--blue);
+}
+.color-blue500 {
+  color: var(--blue500)
+}
+.color-blue700 {
+  color: var(--blue700)
+}
+.color-red {
+  color: var(--red);
+}
 .color-grey300 {
   color: var(--grey300)
 }
-
 .color-grey500 {
   color: var(--grey500)
 }
-
 .color-contenial500 {
   color: var(--contenial500)
 }
-
 /* font weight class names */
 .font-light {
   font-weight: var(--thin);
