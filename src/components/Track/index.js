@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react"
 import "./styles.css"
+import "typeface-roboto"
 import Copy from "../Copy"
 import Heading from "../Heading"
 import BarChartCategories from "../BarChartCategories"
@@ -143,7 +144,7 @@ const Track = () => {
               setDisplayCategoryTransactions(false)
             }}
           >
-            <i className="arrow-back left"></i>
+            <i className="arrow-back arrow-left"></i>
             Back
           </button>
           <div className="track-flex-money">
@@ -161,15 +162,17 @@ const Track = () => {
               Money in
             </Heading>
           </div>
-          <Heading
-            size="xmedium"
-            color="centennial-500"
-            weight="medium"
-            pt="pt-large"
-            pb="pb-large"
-          >
-            {activeCategory === null ? "Placeholder" : activeCategory}
-          </Heading>
+          <div className="capitalize">
+            <Heading
+              size="xmedium"
+              color="centennial-500"
+              weight="medium"
+              pt="pt-large"
+              pb="pb-large"
+            >
+              {activeCategory === null ? "Placeholder" : activeCategory}
+            </Heading>
+          </div>
           {activeCategory !== null
             ? transactions
                 .filter(
@@ -192,13 +195,6 @@ const Track = () => {
                       transaction.category = "household"
                       transaction.color = "#76C2B6"
                     }}
-                    // category={transaction.category}
-                    // changeCategory={() =>
-                    //   //   {
-                    //   //   transaction.category = "food"
-                    //   // }
-                    //   setDisplayChangeCategory(true)
-                    // }
                   />
                 ))
             : null}

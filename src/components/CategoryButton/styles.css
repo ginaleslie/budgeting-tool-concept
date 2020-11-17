@@ -12,6 +12,7 @@
   max-width: 641px;
   margin-bottom: 9px;
   cursor: pointer;
+  font-family: "Roboto", sans-serif;
 }
 .arrow {
   border: solid var(--blue-500);
@@ -20,7 +21,7 @@
   padding: 5px;
 }
 
-.right {
+.right-arrow {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
