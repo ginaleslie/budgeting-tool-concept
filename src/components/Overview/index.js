@@ -59,7 +59,18 @@ const Overview = () => (
 
       {/* chart boxe2*/}
       <ul className="flex-container3">
-        <li className="flex-item3"><OverViewChart /> </li>
+        <li className="flex-item3">
+        <div className='Chart-text'>
+            <Copy color="blue-700" 
+                  size="meduim" 
+                  weight='bold'>
+                    Categories with the most spend
+            </Copy>  
+          </div>
+          <div className='Chart'>
+            <OverViewChart /> 
+          </div>
+        </li>
         <li className="flex-item3">
         <div className='budget-box'>
           <div className='budget'>

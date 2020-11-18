@@ -59,6 +59,7 @@ text-align:center
   vertical-align:top;
   display:inline-block;
   padding-top: 12px;
+  vertical-align: middle;
 
 }
 
@@ -82,10 +83,24 @@ right: 10px;
 
 .Add-product{
   float: right;
+  padding-left: 5px;
 }
 
 .Paste-icon {
   float: right;
+}
+
+.Chart {
+  position: relative; 
+  height: 80vh;
+  padding-top: 40px;
+}
+
+.Chart-text {
+  position: relative; 
+  padding-top: 10px;
+  padding-left:30px;
+  align-content: center;
 }
 
 
@@ -130,7 +145,7 @@ right: 10px;
   padding: 5px;
   border-radius: 4px;
   /* width: 200px; */
-  height: 240px;
+  height: 260px;
   max-width: 311px;
   margin-top: 10px;
   margin: 3px;
@@ -191,13 +206,14 @@ right: 10px;
 
 .Summary1 {
   float: left;
-  padding-top: 23px;
+  padding-top: 22px;
   padding-left: 20px;
+  
   }
 
 .amount {
   float: right;
-  padding-top: 23px;
+  padding-top: 22px;
   padding-right: 20px;
 } 
 
@@ -233,6 +249,10 @@ right: 10px;
   position: relative;
   left: 3px;
   top: -9px;
+}
+
+.line {
+  color: grey;
 }
 
 
