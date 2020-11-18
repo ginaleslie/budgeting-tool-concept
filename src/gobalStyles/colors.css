@@ -6,6 +6,8 @@
   --grey500: #333E48;
   --contenial500: #00194D;
   --blue700: #0151A3;
+  --alert500: #F26901;
+  --aqua500: #76C2B6;
 }
 .color-blue {
   color: var(--blue);
@@ -34,6 +36,15 @@
 .color-contenial500 {
   color: var(--contenial500)
 }
+
+.color-alert500 {
+  color: var(--alert500)
+}
+
+.color-aqua500 {
+  color: var(--aqua500)
+}
+
 
 /* font weight class names */
 .font-light {
