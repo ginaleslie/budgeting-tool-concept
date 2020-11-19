@@ -245,14 +245,17 @@ right: 10px;
   top: 30px;
 }
 
-.Tick {
+.tick {
   position: relative;
-  left: 3px;
-  top: -9px;
+  left: 14px;
+  top: 21px;
+  z-index: 10;
 }
 
 .line {
-  color: grey;
+  border-top: 1px solid grey;
+  background-color: blue;
+  z-index: -2;
 }
 
 

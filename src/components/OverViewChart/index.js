@@ -71,31 +71,13 @@ function OverViewChart() {
           gridLines: {
             drawOnChartArea: false,
           },
-          ticks: {
-            autoSkip: false,
-            maxRotation: 90,
-            minRotation: 90,
-            padding: -160,
-          }
         },
       ],
       yAxes: [
-        {  
-        ticks : {
-          display : false,
-          autoSkip: false,
-            maxRotation: 90,
-            minRotation: 90,
-            padding: -110
-        }, 
-          gridLines: {
-            drawOnChartArea: false,  
+        {
+          ticks : {
+            display : false
         },
-        options: {  
-            responsive: true,
-            maintainAspectRatio: false
-        }
-          
         },
       ],
     },

@@ -72,10 +72,13 @@ const Overview = () => (
           </div>
         </li>
         <li className="flex-item3">
+          <div className='tick'>
+            <Icon name="tick" size="small" />
+          </div> 
         <div className='budget-box'>
           <div className='budget'>
             <Copy color="blue-700" size="xxsmall">
-            your budget
+              your budget
               </Copy>  
           </div>
             
@@ -103,7 +106,7 @@ const Overview = () => (
           <p className={"font-xsmall color-grey300 font-medium"}>
             R3500 / R10 000</p>
           <br />
-          <hr className="line" />
+          <hr style={{ borderTop: "1px solid #EBEEF1" }}/>
           <div
             className={"font-medium color-blue500 Add-product font-medium"}
           >
