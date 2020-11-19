@@ -229,7 +229,7 @@ right: 10px;
 }
 
 .budget-box {
-  padding-top: 10px;
+  padding-top: 2px;
   padding-left: 10px;
 }
 
@@ -248,7 +248,7 @@ right: 10px;
 .tick {
   position: relative;
   left: 14px;
-  top: 21px;
+  top: 13px;
   z-index: 10;
 }
 
