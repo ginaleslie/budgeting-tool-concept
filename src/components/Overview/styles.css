@@ -83,6 +83,7 @@ right: 10px;
 
 .Add-product{
   float: right;
+  padding-right: 20px;
   padding-left: 5px;
 }
 
@@ -183,13 +184,14 @@ right: 10px;
   float: left;
   width: 20px;
   height: 20px;
-  margin: 0px;
-  border-radius: 3px;
-  margin-right: 20px;
+  margin: 2px; 
+  margin-right: 17px;
 }
 
 .blue {
   background: #0151A3;
+  width: 12px;
+  height: 12px;
 }
 
 .info-dot2 {
@@ -197,11 +199,13 @@ right: 10px;
   width: 20px;
   height: 20px;
   margin-right: 20px;
-  border-radius: 3px;
+  
 }
 
 .green {
   background: #2AA12A;
+  width: 12px;
+  height: 12px;
 }
 
 .Summary1 {
@@ -225,7 +229,7 @@ right: 10px;
   vertical-align: middle;
   border-radius: 20px;
   height: 20px;
-  width: 80px;
+  width: 100px;
 }
 
 .budget-box {

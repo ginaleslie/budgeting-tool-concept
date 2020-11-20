@@ -77,13 +77,13 @@ const Overview = () => (
           </div> 
         <div className='budget-box'>
           <div className='budget'>
-            <Copy color="blue-700" size="xxsmall">
-              your budget
+            <Copy color="blue-700" size="xsmall">
+              Your budget
               </Copy>  
           </div>
             
           <br/>
-          <p className={"font-xxsmall color-grey300"}>Last edited 03/11/2020</p>
+          <p className={"font-xsmall color-grey300"}>Last edited 03/11/2020</p>
           <br />
           <h2 className="font-medium color-grey500 font-xsmall">
             Girlfriend's birthday gift 
@@ -107,14 +107,14 @@ const Overview = () => (
             R3500 / R10 000</p>
           <br />
           <hr style={{ borderTop: "1px solid #EBEEF1" }}/>
-          <div
-            className={"font-medium color-blue500 Add-product font-medium"}
-          >
-            <p>Add product</p>
-          </div>
-          <div className="Paste-icon">
-            <Paste />
-          </div>
+            <div
+              className={"font-medium color-blue500 Add-product font-medium"}
+            >
+              <p >Add product</p>
+            </div>
+            <div className="Paste-icon">
+              <Paste />
+            </div>
         </div>
         </li>
       </ul>

@@ -78,6 +78,9 @@ function OverViewChart() {
           ticks : {
             display : false
         },
+            gridLines: {
+              drawOnChartArea: false,
+            },
         },
       ],
     },
