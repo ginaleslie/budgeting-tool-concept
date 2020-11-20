@@ -1,0 +1,12 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks"
+import CreateNewButton from "./"
+
+<Meta title="360 Menu/CreateNewButton" component={CreateNewButton} />
+
+# Default:
+
+<Canvas>
+  <Story name="default">
+    <CreateNewButton createNewCategory={() => alert("Button clicked")} />
+  </Story>
+</Canvas>

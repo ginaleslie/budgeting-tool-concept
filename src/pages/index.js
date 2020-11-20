@@ -22,6 +22,14 @@ export default function Home() {
   const [userLoggedin, setUserLoggedin] = useState(
     JSON.parse(localStorage.getItem("loggedIn"))
   )
+  const [activeTransaction, setActiveTransaction] = useState([])
+
+  const [newCategory, setNewCategory] = useState({ name: "", color: "red" })
+
+  const [
+    displayCategoryTransactions,
+    setDisplayCategoryTransactions,
+  ] = useState(false)
 
   useEffect(() => {
     const haventLoggedIn = localStorage.haventLoggedIn === "false" // change "true" to true and others to false
@@ -44,6 +52,12 @@ export default function Home() {
         setActiveTab,
         activeCategory,
         setActiveCategory,
+        activeTransaction,
+        setActiveTransaction,
+        displayCategoryTransactions,
+        setDisplayCategoryTransactions,
+        newCategory,
+        setNewCategory,
       }}
     >
       {!userLoggedin ? (

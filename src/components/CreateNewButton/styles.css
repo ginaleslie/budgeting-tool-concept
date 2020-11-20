@@ -1,0 +1,10 @@
+.create-new-category-button {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--blue-500);
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+}

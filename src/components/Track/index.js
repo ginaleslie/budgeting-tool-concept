@@ -1,11 +1,16 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useState, useCallback } from "react"
 import "./styles.css"
 import "typeface-roboto"
 import Copy from "../Copy"
 import Heading from "../Heading"
 import BarChartCategories from "../BarChartCategories"
 import ApplicationContext from "../../context/Application"
-import CategoryButton from "../CategoryButton"
+
+import { categories } from "../Categories"
+import RadioButtonList from "../RadioButtonList"
+import FilteredCategories from "../FilteredCategories"
+import CreateNewCategory from "../CreateNewCategory"
+
 import Accordion from "../Accordion"
 
 const Track = () => {
@@ -15,122 +20,57 @@ const Track = () => {
     setActiveCategory,
     activeCategory,
     transactions,
-  } = useContext(ApplicationContext)
-
-  const [
+    activeTransaction,
+    setActiveTransaction,
     displayCategoryTransactions,
     setDisplayCategoryTransactions,
-  ] = useState(false)
+    newCategory,
+    setNewCategory,
+  } = useContext(ApplicationContext)
 
-  const [transactionClicked, setTransactionClicked] = useState(false)
+  const [displayCreateNewCategory, setDisplayCreateNewCategory] = useState(
+    false
+  )
 
   const currentBalance = incomeSum - expensesSum
 
-  console.log(transactions)
+  const [value, setValue] = React.useState(categories[0].name)
 
-  const expensesOnlyCategorizedTransactions = transactions
-    .filter(expenses => expenses.amount < 0)
-    .map(e => e)
-
-  const groupedByCategory = expensesOnlyCategorizedTransactions.reduce(
-    (groupedByCategory, i) => {
-      const category = i.category
-      if (!groupedByCategory[category]) {
-        groupedByCategory[category] = []
-      }
-      groupedByCategory[category].push(i)
-      return groupedByCategory
-    },
-    {}
-  )
-
-  const categoryAndSum = Object.keys(groupedByCategory).map(category => {
-    return {
-      category,
-      categorySum: groupedByCategory[category]
-        .map(e => e.amount * -1)
-        .reduce(function (a, b) {
-          return a + b
-        }, 0),
-      color: groupedByCategory[category]
-        .map(e => e.color)
-        .reduce(function (a) {
-          return a
-        }),
-    }
+  const onChange = React.useCallback(e => {
+    setValue(e.target.value)
   })
-  console.log(categoryAndSum)
+
+  console.log(value)
+  console.log(activeTransaction)
 
   return (
     <div className="track-bg">
       <div className="track-max-width">
-        <div
-          className={
-            !displayCategoryTransactions
-              ? "track-chart-max-width"
-              : "hide-element"
-          }
-        >
-          <Copy color="blue-700" pt="pt-medium">
-            Current Balance
-          </Copy>
-          <Heading
-            color="wealth-grey-500"
-            weight="bold"
-            size="xxmedium"
-            pt="pt-xsmall"
-          >
-            R {currentBalance}
-          </Heading>
-          <div className="track-chart-container">
-            <BarChartCategories />
-          </div>
-        </div>
+        {/* -------------- first section of track 
+            -------------- where categories are selected */}
         <div className={!displayCategoryTransactions ? null : "hide-element"}>
-          <div className="track-flex-money">
-            <div className="track-flex-money-first-child">
-              <Heading
-                size="medium"
-                color="blue-700"
-                weight="bold"
-                pt="pt-large"
-              >
-                Money out
-              </Heading>
-            </div>
-            <Heading size="medium" color="neutral" weight="bold" pt="pt-large">
-              Money in
-            </Heading>
-          </div>
-          <Heading
-            size="xmedium"
-            color="centennial-500"
-            weight="medium"
-            pt="pt-large"
-            pb="pb-large"
-          >
-            All Categories
-          </Heading>
-
-          {categoryAndSum.map((category, index) => (
-            <CategoryButton
-              key={index}
-              click={() => {
-                setActiveCategory(category.category)
-                setDisplayCategoryTransactions(true)
-                console.log(activeCategory)
-              }}
+          <div className="track-chart-max-width">
+            <Copy color="blue-700" pt="pt-medium">
+              Current Balance
+            </Copy>
+            <Heading
+              color="wealth-grey-500"
+              weight="bold"
+              size="xxmedium"
+              pt="pt-xsmall"
             >
-              <div className="track-flex">
-                <div
-                  className="square"
-                  style={{ background: category.color }}
-                ></div>
-                {category.category}
-              </div>
-            </CategoryButton>
-          ))}
+              R {currentBalance}
+            </Heading>
+            <div className="track-chart-container">
+              <BarChartCategories />
+            </div>
+          </div>
+
+          <FilteredCategories transactions={transactions} />
         </div>
+
+        {/* -------------- second section of track 
+            -------------- where transactions are selected */}
         <div
           className={
             displayCategoryTransactions
@@ -138,42 +78,55 @@ const Track = () => {
               : "hide-element"
           }
         >
-          <button
-            className="track-back-button"
-            onClick={() => {
-              setDisplayCategoryTransactions(false)
-            }}
-          >
-            <i className="arrow-back arrow-left"></i>
-            Back
-          </button>
-          <div className="track-flex-money">
-            <div className="track-flex-money-first-child">
-              <Heading
-                size="medium"
-                color="blue-700"
-                weight="bold"
-                pt="pt-large"
+          {activeTransaction.length === 0 ? (
+            <div>
+              <button
+                className="track-back-button"
+                onClick={() => {
+                  setDisplayCategoryTransactions(false)
+                  setDisplayCreateNewCategory(false)
+                }}
               >
-                Money out
-              </Heading>
+                <i className="arrow-back arrow-left"></i>
+                Back
+              </button>
+              <div className="track-flex-money">
+                <div className="track-flex-money-first-child">
+                  <Heading
+                    size="medium"
+                    color="blue-700"
+                    weight="bold"
+                    pt="pt-large"
+                  >
+                    Money out
+                  </Heading>
+                </div>
+                <Heading
+                  size="medium"
+                  color="neutral"
+                  weight="bold"
+                  pt="pt-large"
+                >
+                  Money in
+                </Heading>
+              </div>
+              <div className="capitalize">
+                <Heading
+                  size="xmedium"
+                  color="centennial-500"
+                  weight="medium"
+                  pt="pt-large"
+                  pb="pb-large"
+                >
+                  {activeCategory === null ? "Placeholder" : activeCategory}
+                </Heading>
+              </div>
             </div>
-            <Heading size="medium" color="neutral" weight="bold" pt="pt-large">
-              Money in
-            </Heading>
-          </div>
-          <div className="capitalize">
-            <Heading
-              size="xmedium"
-              color="centennial-500"
-              weight="medium"
-              pt="pt-large"
-              pb="pb-large"
-            >
-              {activeCategory === null ? "Placeholder" : activeCategory}
-            </Heading>
-          </div>
-          {activeCategory !== null
+          ) : null}
+
+          {activeCategory !== null &&
+          activeTransaction.length === 0 &&
+          displayCreateNewCategory === false
             ? transactions
                 .filter(
                   transaction =>
@@ -183,17 +136,94 @@ const Track = () => {
                 .map((transaction, index) => (
                   <Accordion
                     key={index}
+                    selected={transaction}
                     title={transaction.description}
                     date={transaction.date.split("T")[0]}
                     amount={transaction.amount * -1}
+                    handleClick={() => setActiveTransaction(transaction)}
                     color={transaction.color}
-                    addToFood={() => {
-                      transaction.category = "food"
-                      transaction.color = "#0163B8"
+                  />
+                ))
+            : null}
+
+          {/* -------------- third section of track 
+              -------------- where changing categories is an option */}
+
+          {activeTransaction.length !== 0 ? (
+            <div>
+              <button
+                className="track-back-button"
+                onClick={() => {
+                  setActiveTransaction([])
+                  setDisplayCategoryTransactions(null)
+                  setDisplayCreateNewCategory(false)
+                }}
+              >
+                <i className="arrow-back arrow-left"></i>
+                Back to categories
+              </button>
+              <Heading
+                size="xmedium"
+                color="centennial-500"
+                weight="medium"
+                pt="pt-large"
+                pb="pb-large"
+              >
+                {displayCreateNewCategory
+                  ? `Create new category for ${activeTransaction.description}`
+                  : `Change category for ${activeTransaction.description}`}
+              </Heading>
+            </div>
+          ) : null}
+
+          {activeTransaction.length !== 0 && displayCreateNewCategory === false
+            ? transactions
+                .filter(transaction =>
+                  transaction.id.includes(activeTransaction.id)
+                )
+                .map(transaction => (
+                  <RadioButtonList
+                    value={value}
+                    onChange={onChange}
+                    categories={categories}
+                    key={transaction}
+                    saveCategoryPreference={() => {
+                      transaction.category = value
+                      categories
+                        .filter(e => e.name === value)
+                        .map(e => {
+                          transaction.color = e.color
+                        })
+
+                      setActiveTransaction([])
+                      setDisplayCategoryTransactions(null)
                     }}
-                    addToHousehold={() => {
-                      transaction.category = "household"
-                      transaction.color = "#76C2B6"
+                    createNewCategory={() => {
+                      setDisplayCreateNewCategory(true)
+                      // setActiveTransaction([])
+                    }}
+                  />
+                ))
+            : null}
+
+          {/* -------------- fourth section of track 
+              -------------- where users create a new category */}
+
+          {displayCreateNewCategory === true
+            ? transactions
+                .filter(transaction =>
+                  transaction.id.includes(activeTransaction.id)
+                )
+                .map(transaction => (
+                  <CreateNewCategory
+                    click={() => {
+                      categories.push(newCategory)
+                      transaction.category = newCategory.name
+                      transaction.color = newCategory.color
+                      console.log(categories)
+                      setActiveTransaction([])
+                      setDisplayCategoryTransactions(null)
+                      setDisplayCreateNewCategory(false)
                     }}
                   />
                 ))

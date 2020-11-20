@@ -1,0 +1,74 @@
+.color-radio-btn {
+  box-sizing: border-box;
+  appearance: none;
+  background: white;
+  border: none;
+  width: 23px;
+  border-radius: 3px;
+  height: 23px;
+  margin: 16px 16px 16px 0 !important;
+}
+.color-radio-btn li {
+  margin-left: 0;
+}
+.color-radio-btn:checked {
+  outline: 2px solid #333;
+  border: none;
+}
+.radio-red {
+  background: red;
+}
+.radio-yellow {
+  background: yellow;
+}
+.radio-green {
+  background: green;
+}
+.radio-lime {
+  background: lime;
+}
+.radio-purple {
+  background: purple;
+}
+.radio-colors-group {
+  display: flex;
+}
+.radio-save {
+  outline: 0;
+  border: 0;
+  color: var(--blue-500);
+  font-size: 16px;
+  cursor: pointer;
+  background: transparent;
+}
+.create-category-text-input {
+  border: 1px solid #e0e4e9;
+  border-radius: 4px;
+  display: flex;
+  color: var(--blue-500);
+  flex-direction: column;
+  padding-top: 13px;
+  margin-top: 10px;
+  background: #ffffff;
+}
+
+.radio-btn-input {
+  background: transparent;
+  border: none;
+  color: #292929;
+  outline: none;
+  padding-bottom: 20px;
+}
+.radio-btn-input:focus {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.radio-btn-input-limit {
+  color: #4a4a4a;
+  font-size: 14px;
+  margin: 0;
+}
+.radio-btn-input-limit input[type="radio"] {
+  margin: 10px 10px 10px 16px;
+}
