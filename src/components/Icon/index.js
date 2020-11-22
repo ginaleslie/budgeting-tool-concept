@@ -106,7 +106,7 @@ const Icon = ({ name, size }) => {
       )
       break
 
-      case "tune":
+    case "tune":
       content = (
         <Tune
           style={{
@@ -117,7 +117,7 @@ const Icon = ({ name, size }) => {
       )
       break
 
-      case "tick":
+    case "tick":
       content = (
         <Tick
           style={{
@@ -185,7 +185,14 @@ Icon.propTypes = {
   /**
    * size of the icon to display
    */
-  size: PropTypes.oneOf(["small", "lsmall", "medium", "large", "xlarge"]),
+  size: PropTypes.oneOf([
+    "small",
+    "lsmall",
+    "medium",
+    "large",
+    "xlarge",
+    "xxlarge",
+  ]),
 }
 
 Icon.defaultProps = {
