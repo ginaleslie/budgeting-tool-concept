@@ -59,7 +59,7 @@ const Overview = () => (
       <ul className="flex-container3">
         <li className="flex-item3">
           <div className="Chart-text">
-            <Copy color="blue-700" size="meduim" weight="bold">
+            <Copy color="blue-700" size="medium" weight="bold">
               Categories with the most spend
             </Copy>
           </div>
@@ -86,7 +86,7 @@ const Overview = () => (
             <h2 className="font-medium color-grey500 font-xsmall">
               Girlfriend's birthday gift
               <div className="amount">
-                <Icon name="tune" size="xxsmall" />
+                <Icon name="tune" size="small" />
               </div>
             </h2>
             <br />
@@ -97,7 +97,7 @@ const Overview = () => (
             <h2 className="font-medium color-grey500 font-xsmall">
               Playstation 5
               <div className="amount">
-                <Icon name="tune" size="xxsmall" />
+                <Icon name="tune" size="small" />
               </div>
             </h2>
             <br />
