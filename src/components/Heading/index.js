@@ -61,6 +61,8 @@ Heading.propTypes = {
     "white",
     "centennial-500",
     "neutral",
+    "aqua500",
+    "alert500",
   ]),
 }
 
