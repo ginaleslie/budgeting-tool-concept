@@ -30,6 +30,9 @@ const LocalStorage = () => {
               ...transaction,
               category: "uncategorized",
               color: "#F201E8",
+              id: `${transaction.description}_${Math.floor(
+                Math.random() * 1000
+              )}`,
             }
 
             categories.forEach(category => {
@@ -42,6 +45,9 @@ const LocalStorage = () => {
               ) {
                 categorizedTransaction.category = category.name
                 categorizedTransaction.color = category.color
+                categorizedTransaction.id = `${
+                  transaction.description
+                }_${Math.floor(Math.random() * 1000)}`
               }
             })
 

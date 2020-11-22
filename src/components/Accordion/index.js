@@ -3,20 +3,28 @@ import Icon from "../Icon"
 import { Button } from "@indiefin/galaxy-button"
 import "./styles.css"
 import Copy from "../Copy"
+import RadioButton from "../RadioButton"
+//import { categories } from "../Categories"
+import CategoryButton from "../CategoryButton"
 
 const Accordion = ({
   title,
   date,
   amount,
-  addToFood,
-  addToHousehold,
   color,
+  onChange,
+  value,
+  saveCategoryPreference,
+  categories,
+  handleClick,
 }) => {
   const [setActive, setActiveState] = useState("")
   const [setHeight, setHeightState] = useState("0px")
   const [setRotate, setRotateState] = useState("accordion-icon")
 
-  const [displayChangeCategory, setDisplayChangeCategory] = useState(false)
+  const [displayChangeCategory, setDisplayChangeCategory] = useState(true)
+
+  //const [activeTransaction, setActiveTransaction] = useState(null)
 
   const content = useRef(null)
 
@@ -28,6 +36,7 @@ const Accordion = ({
         : `${content.current.scrollHeight}px`
     )
     setRotateState(setActive === "active-accordion" ? "" : "rotate")
+    setDisplayChangeCategory(false)
   }
 
   return (
@@ -51,11 +60,7 @@ const Accordion = ({
               <Icon name="check" size="lsmall" />
               Transaction Details
             </div>
-            <Button
-              kind="text"
-              handleClick={() => setDisplayChangeCategory(true)}
-              size="large"
-            >
+            <Button kind="text" handleClick={handleClick} size="large">
               Change category
             </Button>
           </div>
@@ -86,12 +91,19 @@ const Accordion = ({
           </div>
         </div>
       </div>
-      {displayChangeCategory ? (
+      {/* {displayChangeCategory ? (
         <div>
-          <button onClick={addToFood}>food</button>
-          <button onClick={addToHousehold}>household</button>
+          {categories.map(item => (
+            <RadioButton
+              item={item}
+              key={item.name}
+              checked={item.name === value}
+              onChange={onChange}
+            />
+          ))}
+          <button onClick={saveCategoryPreference}>save</button>
         </div>
-      ) : null}
+      ) : null} */}
     </div>
   )
 }

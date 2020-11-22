@@ -8,6 +8,9 @@ import ArrowUp from "./assets/arrowUp"
 import Calendar from "./assets/calendar"
 import Check from "./assets/check"
 import Face from "./assets/face"
+import Create from "./assets/create"
+import Tune from "./assets/tune"
+import Tick from "./assets/tick"
 
 const Icon = ({ name, size }) => {
   let iconSize
@@ -103,6 +106,28 @@ const Icon = ({ name, size }) => {
       )
       break
 
+      case "tune":
+      content = (
+        <Tune
+          style={{
+            height: `${iconSize}px`,
+            width: `${iconSize}px`,
+          }}
+        />
+      )
+      break
+
+      case "tick":
+      content = (
+        <Tick
+          style={{
+            height: `${iconSize}px`,
+            width: `${iconSize}px`,
+          }}
+        />
+      )
+      break
+
     case "check":
       content = (
         <Check
@@ -117,6 +142,17 @@ const Icon = ({ name, size }) => {
     case "face":
       content = (
         <Face
+          style={{
+            height: `${iconSize}px`,
+            width: `${iconSize}px`,
+          }}
+        />
+      )
+      break
+
+    case "create":
+      content = (
+        <Create
           style={{
             height: `${iconSize}px`,
             width: `${iconSize}px`,

@@ -1,105 +1,197 @@
-.body{
-    background-color: #F9FAFB;
-    font-weight: 12px;
-}
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto ;
-    padding: 90px 100px 0px 100px ; 
-    gap: 30px;
-  }
-  @media screen and (max-width: 400px){
-    .grid-container{
-      grid-template-columns: auto;
-    }
-  }
-  .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 2px solid #E0E4E9;
-    border-radius: 5px;
-    padding: 60px;
-    font-size: 30px;
-    width: 80%;
-  }
 
-  .grid-container2 {
-    display: grid;
-    grid-template-columns: auto ;
-    padding: 90px 100px 0px 100px ; 
-    gap: 30px;  
+.overview-bg {
+  background: #f9fafb;
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
 }
 
-  .catagory {
-    float: left;
-  }
-
-  .price {
-    float: right;
-  } 
-      
-  .grid-item2 {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 2px solid #E0E4E9;
-    border-radius: 5px;
-    padding: 25px;
-    font-size: 20px;  
-  }
-
-  .Chart {
-      height:41vh; 
-      width:37vw;   
-  }
-
-  .Summery {
-      position: relative;
-      border: 1px solid black;
-      width: 450px;
-      height: 30px;
-      padding-left: 40px; 
-  }
-
-  .left{
-      position: absolute;
-      left: 10px;
-  }
-
-  .right{
-    position: absolute;
-    right: 10px;
+.overview-max-width {
+  max-width: 641px;
+  width: 100%;
 }
 
-.Summary {
-float: right;
-font-weight: meduim;
-
+.bar-chart-container {
+  background: #fefefe;
+  padding: 20px;
+  max-width: 641px;
+  margin-top: 30px;
+  border: 1px solid #e9ecee;
+  border-radius: 4px;
 }
 
-.Heading-top {
-right:-110px;
-top:40px;
 
-}
-
-.Heading-chart {
-  top:-29px;
-  text-align: center;
-}
-
-.Heading-bottom {
+/* Flexbox styling */
+.container-2 {
+  display: flex;
+  gap:10px;
   
+  /*
+    justify-content:flex-start;
+    justify-content:flex-end;
+    justify-content:center;
+    justify-content:space-around;
+    */
+  justify-content: space-between;
+}
+
+.container-2 div {
+  border: 1px solid #e9ecee;
+  padding: 10px;
+  background: #fefefe;
+  border-radius: 4px;
+}
+
+.container-2-box {
+  flex-basis: 51%;
+}
+
+.container-3-box {
+  flex-basis: 51%;
+}
+
+
+.catagory {
+text-align:center
+} 
+
+.catagory > div {
+  vertical-align:top;
+  display:inline-block;
+  padding-top: 12px;
+  vertical-align: middle;
+
+}
+
+.text {
+  padding-left: 10px;
+}
+
+.percentage {
+  padding-top: 1.5%;
+}
+
+.left{
+  position: absolute;
+  left: 10px;
+}
+
+.right{
+position: absolute;
+right: 10px;
+}
+
+.Add-product{
+  float: right;
+  padding-right: 20px;
+  padding-left: 5px;
+}
+
+.Paste-icon {
+  float: right;
+}
+
+.Chart {
+  position: relative; 
+  height: 80vh;
+  padding-top: 40px;
+}
+
+.Chart-text {
+  position: relative; 
+  padding-top: 10px;
+  padding-left:30px;
+  align-content: center;
+}
+
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: no-wrap;
+}
+
+.flex-item {
+  background: #fefefe;
+  border: 1px solid #e9ecee;
+  padding: 5px;
+  border-radius: 4px;
+  /* width: 200px; */
+  height: 56px;
+  max-width: 311px;
+  margin-top: 10px;
+  margin: 3px;
+  flex-shrink: 0;
+  flex-grow: 1;
+  flex-basis: 200px;
+}
+
+.flex-container3 {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: no-wrap;
+}
+
+.flex-item3 {
+  background: #fefefe;
+  border: 1px solid #e9ecee;
+  padding: 5px;
+  border-radius: 4px;
+  /* width: 200px; */
+  height: 260px;
+  max-width: 311px;
+  margin-top: 10px;
+  margin: 3px;
+  flex-shrink: 0;
+  flex-grow: 1;
+  flex-basis: 200px;
+}
+
+.flex-container2 {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: no-wrap;
+}
+
+.flex-item2 {
+  background: #fefefe;
+  border: 1px solid #e9ecee;
+  padding: 5px;
+  border-radius: 4px;
+  /* width: 200px; */
+  height: 56px;
+  max-width: 641px;
+  margin-top: 10px;
+  margin: 3px;
+  flex-shrink: 0;
+  flex-grow: 1;
+  flex-basis: 200px;
 }
 
 .info-dot {
   float: left;
   width: 20px;
   height: 20px;
-  margin: 0px;
-  border-radius: 3px;
-  margin-right: 20px;
+  margin: 2px; 
+  margin-right: 17px;
 }
 
 .blue {
   background: #0151A3;
+  width: 12px;
+  height: 12px;
 }
 
 .info-dot2 {
@@ -107,70 +199,80 @@ top:40px;
   width: 20px;
   height: 20px;
   margin-right: 20px;
-  border-radius: 3px;
+  
 }
 
 .green {
   background: #2AA12A;
+  width: 12px;
+  height: 12px;
+}
+
+.Summary1 {
+  float: left;
+  padding-top: 22px;
+  padding-left: 20px;
+  
+  }
+
+.amount {
+  float: right;
+  padding-top: 22px;
+  padding-right: 20px;
+} 
+
+.budget {
+  background-color: #e6f1fa;
+  position: relative;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  border-radius: 20px;
+  height: 20px;
+  width: 100px;
+}
+
+.budget-box {
+  padding-top: 2px;
+  padding-left: 10px;
+}
+
+.Heading-top {
+  padding-top: 5px;
+  padding-left: 80px;
+  padding-bottom: 30px;
 }
 
 .face {
-  position: absolute;
-  left: 20px;
-  top: 300px;
-
+  position: relative;
+  left: 5px;
+  top: 30px;
 }
 
-.line {
-  border-top: 1px solid #F3F5F7;
-}
 
-.Add-product{
-  float: right;
-}
-
-.Paste-icon {
-  float: right;
-}
-
-.Spent{
-  background-color: #ffffff;
-  color:#f26901
-}
-
-/* Flexbox styling 
 .box {
   display: flex;
   flex-flow: row wrap;
   gap: 17px;
   flex: 1 1 0;
 }
+.tick {
+  position: relative;
+  left: 14px;
+  top: 13px;
+  z-index: 10;
+}
 
-.box {
- 
-  padding: 0.5em;
-  white-space: nowrap;
+.line {
+  border-top: 1px solid grey;
+  background-color: blue;
+  z-index: -2;
 }
 
 
-.box>* {
-  margin: 0.5em;
-  color: white;
-  padding: 0.5em;
-}
 
-.box {
-  display: flex;
-}
 
-.box>* {
-  flex: 1 1 0 ;
-}
 
-.box {
-  margin-bottom: 1em;
-}
-/* Flexbox styling */
 
 
    
