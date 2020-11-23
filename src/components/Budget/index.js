@@ -8,6 +8,7 @@ import Warning2 from  "./Warning2"
 import YourBudget from  "./YourBudget"
 import Needhelp2 from  "./Needhelp2"
 import ChartBox from  "./ChartBox"
+import Edit from  "./Edit"
 
 
 
@@ -25,8 +26,12 @@ const Budget = () => (
             
           </div>
           <div className="grid-item">
-              <p className='catagory error-400'>
-              <h1>Girlfriend's birthday</h1>
+              <p className='color-grey300'>
+              <h1>Girlfriend's birthday  </h1>
+              <div className="chartHelp">
+              <Edit />
+              </div>
+               
               <br></br>
               <div className='amount-1'>
                 <Warning2/> 20 days until Girlfriend’s birthday</div>
@@ -34,50 +39,56 @@ const Budget = () => (
               </p>
               
               <p className= {'amount-1 price'}>
+              
                   -R2965,00
               </p>
           </div>
-         
           <div className="grid-item">
-              <p className='catagory color-grey300'>
+              <p className='color-grey300'>
               <h1>Playstation 5</h1>
+              <div className="chartHelp">
+              <Edit />
+              </div>           
               <br></br>
-              <Warning1/> 100 days until playstation 5
-              </p>
-              <p className={'amount-1 price'}>
-                  -R1500,00
+              <div className='amount-2'>
+                <Warning1/>  100 days until Playstation</div>
+              
               </p>
               
+              <p className= {'amount-1 price'}>
+                  -R2965,00
+              </p>
           </div>
 
           <div>
             <h2>
               Summary
             </h2>
+            <div className="grid-item">
+            <table>
+            <tr>
+            <td><Face/></td>
+            <td style={{marginTop: "0px"}}>Consistency is key, Thabiso You had quite a good start, however, your biggest drawback is spending on fuel. To reach your goals, you'll need to cut back on fuel spend. Here's how,  Read for more tips</td>
+            </tr>
+            </table>
+            </div>
             </div>
 
-          <div className='budget-container-flex'>
+
+          <div className='grid-container'>
       
-
-
-        <div> 
-          <div class="grid-item">
-          <h1><Face/>Consistency is key, Thabiso  <br></br> <br></br>You had quite a good start, however, your biggest drawback is spending on fuel. 
-            To reach your goals, you'll need to cut back on fuel spend. Here's how,  Read for more tips</h1>
-        </div>
-
-
-        <br></br>
+        
  <div class="need">
  <Needhelp2/>
+
+
           
  </div>
-        
-
+      
  <br></br>
  <br></br>
 
- <div class="chart">
+ <div class="chartHelp">
  <ChartBox/>
           
  </div>
@@ -93,7 +104,7 @@ const Budget = () => (
 </div>
   
 
-</div>  
+
 
    
 )
