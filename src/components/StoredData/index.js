@@ -11,7 +11,7 @@ const LocalStorage = () => {
   const { transactions, setTransactions } = useContext(ApplicationContext)
 
   const [userSettings, setUserSettings] = useState({
-    refreshOnLoad: false,
+    refreshOnLoad: true,
   })
 
   const [isFetching, setIsFetching] = useState(false)
