@@ -70,9 +70,9 @@ export default function Home() {
         <Navigation
           headingForNav={
             activeTab === "Overview"
-              ? "Overview stuff"
+              ? "Welcome Back, Thabiso!"
               : activeTab === "Budget"
-              ? "Budget stuff"
+              ? "Your Budget."
               : "Track your spending."
           }
         />
