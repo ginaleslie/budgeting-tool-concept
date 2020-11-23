@@ -16,11 +16,11 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("Overview")
 
   const [transactions, setTransactions] = useState(
-    JSON.parse(localStorage.getItem("transactions") || "[]")
+    JSON.parse(localStorage?.getItem("transactions") || "[]")
   )
 
   const [userLoggedin, setUserLoggedin] = useState(
-    JSON.parse(localStorage.getItem("loggedIn"))
+    JSON.parse(localStorage?.getItem("loggedIn"))
   )
   const [activeTransaction, setActiveTransaction] = useState([])
 
