@@ -73,6 +73,17 @@ const Icon = ({ name, size }) => {
       )
       break
 
+      case "paste":
+        content = (
+          <Paste
+            style={{
+              height: `${iconSize}px`,
+              width: `${iconSize}px`,
+            }}
+          />
+        )
+        break
+
     case "arrowUp":
       content = (
         <ArrowUp
