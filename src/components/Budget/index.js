@@ -7,7 +7,7 @@ import Copy from "../Copy"
 import Warning1 from "./Warning1"
 import Warning2 from "./Warning2"
 import YourBudget from "./YourBudget"
-import Needhelp2 from "./Needhelp2"
+import Needhelp2 from "./needhelp2"
 import ChartBox from "./ChartBox"
 import Edit from "./Edit"
 
