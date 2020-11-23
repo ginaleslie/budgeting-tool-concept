@@ -6,7 +6,7 @@ import "../../../src/gobalStyles/fonts.css"
 import "../../../src/gobalStyles/globalCssVariables.css"
 import "../../../src/gobalStyles/colors.css"
 // import Face from "./Face"
-import Tick from "./Tick"
+
 import Paste from "./Paste"
 import Icon from "../Icon"
 import Copy from "../Copy"
