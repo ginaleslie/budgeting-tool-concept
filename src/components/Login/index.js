@@ -27,7 +27,7 @@ const Login = () => {
     setUserLoggedin()
   }, [])
   return (
-    <>
+    <div className="login-bg">
       <div style={{ position: "absolute", top: "0", left: "100px" }}>
         <Icon name="bindie" size="xxxlarge" />
       </div>
@@ -83,7 +83,7 @@ const Login = () => {
           </Copy>
         </form>
       </div>
-    </>
+    </div>
   )
 }
 
