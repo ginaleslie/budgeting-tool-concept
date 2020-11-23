@@ -11,6 +11,7 @@ import Face from "./assets/face"
 import Create from "./assets/create"
 import Tune from "./assets/tune"
 import Tick from "./assets/tick"
+import Bindie from "./assets/bindie"
 
 const Icon = ({ name, size }) => {
   let iconSize
@@ -34,6 +35,9 @@ const Icon = ({ name, size }) => {
       iconSize = 64
       break
 
+    case "xxxlarge":
+      iconSize = 90
+      break
     default:
       break
   }
@@ -73,16 +77,16 @@ const Icon = ({ name, size }) => {
       )
       break
 
-      case "paste":
-        content = (
-          <Paste
-            style={{
-              height: `${iconSize}px`,
-              width: `${iconSize}px`,
-            }}
-          />
-        )
-        break
+    case "paste":
+      content = (
+        <Paste
+          style={{
+            height: `${iconSize}px`,
+            width: `${iconSize}px`,
+          }}
+        />
+      )
+      break
 
     case "arrowUp":
       content = (
@@ -172,6 +176,17 @@ const Icon = ({ name, size }) => {
       )
       break
 
+    case "bindie":
+      content = (
+        <Bindie
+          style={{
+            height: `${iconSize}px`,
+            width: `${iconSize}px`,
+          }}
+        />
+      )
+      break
+
     default:
       break
   }
@@ -203,6 +218,7 @@ Icon.propTypes = {
     "large",
     "xlarge",
     "xxlarge",
+    "xxxlarge",
   ]),
 }
 

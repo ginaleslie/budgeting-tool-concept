@@ -160,7 +160,7 @@ const Track = () => {
                 }}
               >
                 <i className="arrow-back arrow-left"></i>
-                Back to categories
+                Back
               </button>
               <Heading
                 size="xmedium"

@@ -31,7 +31,9 @@ input[type="checkbox"]:checked + label:before {
   content: "\2713";
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   font-size: 20px;
-  color: #454545;
+  background: var(--blue-500);
+  color: white;
   text-align: center;
   line-height: 20px;
+  border: 2px solid var(--blue-500);
 }

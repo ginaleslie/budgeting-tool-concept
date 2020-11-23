@@ -9,14 +9,13 @@ import Copy from "../Copy"
 import TextInput from "../TextInput"
 import PasswordInput from "../PasswordInput"
 import CheckBox from "../Checkbox"
-// import gif from "../../../static/images/loader.gif"
+
 import { PageLoader } from "@indiefin/galaxy-page-loader"
 import LoginButton from "../LoginButton"
-// import Category from "../Categories"
-//import Bar from "../BarChartCategories"
+import Icon from "../Icon"
 
 const Login = () => {
-  const { setUserLoggedin, setActiveTab } = useContext(ApplicationContext)
+  const { setUserLoggedin } = useContext(ApplicationContext)
   const buttons = ["Overview", "Track", "Budget"]
 
   const login = () => {
@@ -29,6 +28,9 @@ const Login = () => {
   }, [])
   return (
     <>
+      <div style={{ position: "absolute", top: "0", left: "100px" }}>
+        <Icon name="bindie" size="xxxlarge" />
+      </div>
       <div className="login-container">
         <PageLoader />
         <Heading
