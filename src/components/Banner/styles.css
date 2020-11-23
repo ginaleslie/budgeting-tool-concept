@@ -1,0 +1,10 @@
+.budget {
+    background-color: #e6f1fa;
+    position: relative;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 20px;
+    height: 20px;
+    width: 100px;
+  }
